@@ -1,0 +1,38 @@
+@mixin alert-border-utils($long) {
+  @each $d in top, right, bottom, left {
+    @each $y in top, right, bottom, left {
+      .alert-#{$d}-#{$y} {
+        box-sizing: content-box;
+        border-#{$d}: solid $width1 $color1;
+        border-#{$y}: solid $width1 $color1;
+        position: absolute;
+        #{$d}: -2*$width1 / 3;
+        #{$y}: -2* $width1 / 3;
+        width: $long;
+        height: $long;
+        @if $d == top {
+          @if $y == left {
+            border-radius: $long / 6 0;
+          } @else if $y == right {
+            border-radius:  0 $long / 6;
+          }
+        } @else if $d == bottom {
+          @if $y == left {
+            border-radius: 0 $long / 6;
+          } @else if $y == right {
+            border-radius: $long / 6 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through 17 {
+  .toop-outer-img#{$i} {
+    transform:rotate(#{($i - 1) * 22.5}deg);
+  }
+  .toop-inside-img#{$i} {
+    transform:rotate(#{($i - 1) * 22.5}deg);
+  }
+}

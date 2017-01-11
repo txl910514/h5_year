@@ -36,8 +36,14 @@
                 <div class="table hoop-value-text">
                   <div class="table-cell">100%</div>
                 </div>
-                <div class="toop-inside-img toop-outer-img16"></div>
-                <div class="toop-inside-img toop-inside-img16"></div>
+                @@include('./toop_outer.html', {
+                  "num": 16,
+                  "nav":"outer"
+                })
+                @@include('./toop_outer.html', {
+                "num": 16,
+                "nav":"inside"
+                })
               </div>
               <div class="standing-exact">
                 <span class="exact-text">台帐</span> 准确率
