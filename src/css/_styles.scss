@@ -209,7 +209,7 @@ html {
        }
        .thanks-text {
          color: $color6;
-         width: 90%;
+         width: 85%;
          margin: auto;
          font-size: 1.4rem;
          text-align: center;
@@ -227,6 +227,11 @@ html {
            font-size: 1.6rem;
            width: 22rem;
            margin-top: 0.6rem;
+           .share-icon {
+             width: 2.2rem;
+             margin-right: 1rem;
+             line-height: normal;
+           }
          }
          &.apply-btn {
            margin-top: 1rem;
