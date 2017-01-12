@@ -150,7 +150,7 @@ html {
          margin-bottom: 2.25rem;
        }
        .input-line {
-         width: 90%;
+         width: 85%;
          height: 3.8rem;
          margin: auto;
          line-height: 3rem;
@@ -169,7 +169,7 @@ html {
          }
        }
        .submit-box {
-         width: 90%;
+         width: 85%;
          height: 4rem;
          margin: auto;
          margin-top: 1.2rem;
@@ -275,7 +275,7 @@ html {
                  text-align: center;
                  line-height: 100%;
                  color: $color2;
-                 font-size: 2rem;
+                 font-size: 1.7rem;
                  font-weight: bold;
                  width: 100%;
                  height: 100%;
@@ -314,7 +314,7 @@ html {
            }
            .standing-detail-img {
              margin: auto;
-             margin-top: 1rem;
+             margin-top: 1.6rem;
              width: 80%;
            }
            .cogradient-text {
@@ -322,7 +322,7 @@ html {
              color: $color1;
              font-weight: bold;
              text-align: center;
-             margin-top: 1rem;
+             margin-top: 1.7rem;
            }
          }
        }
@@ -880,6 +880,63 @@ html {
        }
        &.apply-form-slide {
          overflow: auto;
+       }
+       &.home_page {
+         .home-time {
+           margin-top:8rem;
+           color: $color1;
+           font-size: 8rem;
+           text-align: right;
+           margin-right: 2rem;
+         }
+         .home-report {
+           font-size: 3.9rem;
+           margin-right: 2rem;
+           text-align: right;
+           color: $color7;
+         }
+         .home-name {
+           margin-top:1.5rem;
+           font-size: 2rem;
+           color: $color6;
+           text-align: right;
+           margin-right: 2rem;
+           font-weight: bold;
+         }
+         .home-theme {
+           margin-top:0.7rem;
+           font-size: 1.8rem;
+           color: $color11;
+           text-align: right;
+           margin-right: 2rem;
+         }
+         .home-line {
+           position: absolute;
+           top: 3.5rem;
+           left: 1.5rem;
+           right: 0;
+           bottom: 2rem;
+           background: url("../images/home_line.png") no-repeat;
+           background-size: contain;
+           z-index: 0;
+         }
+         .home-back {
+           position: absolute;
+           left: 0;
+           bottom: 0;
+           width: 70%;
+           height: 70%;
+           background: url("../images/home_back.png") no-repeat;
+           background-position: left bottom;
+           background-size: contain;
+           z-index: 0;
+         }
+         .bottom_slyx_log {
+           position: absolute;
+           bottom:2rem;
+           width: 10rem;
+           right: 2rem;
+         }
        }
      }
    }
