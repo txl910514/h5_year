@@ -6,8 +6,8 @@
         border-#{$d}: solid $width1 $color1;
         border-#{$y}: solid $width1 $color1;
         position: absolute;
-        #{$d}: -2*$width1 / 3;
-        #{$y}: -2* $width1 / 3;
+        #{$d}: -2*$long / 9;
+        #{$y}: -2* $long / 9;
         width: $long;
         height: $long;
         @if $d == top {

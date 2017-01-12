@@ -4,6 +4,43 @@
 var index = {
   ready_init:function() {
     var self = this;
+    var one_scale = 315/500;
+    var two_scale = 226/500;
+    var three_scale = 148/500;
+    var bar_width = $('.cup-bar').width();
+    var one_bottom = bar_width*one_scale;
+    var two_bottom = bar_width*two_scale;
+    var three_bottom = bar_width*three_scale;
+    var one_height = $('.award1').height();
+    var two_height = $('.award2').height();
+    var three_height = $('.award3').height();
+    $('.award1').css({
+      bottom:one_bottom +'px'
+    });
+    $('.award2').css({
+      bottom:two_bottom +'px'
+    });
+    $('.award3').css({
+      bottom:three_bottom +'px'
+    });
+    $('.technical-num1').css({
+      bottom:(one_bottom-40) +'px'
+    });
+    $('.technical-num2').css({
+      bottom:(two_bottom-40) +'px'
+    });
+    $('.technical-num3').css({
+      bottom:(three_bottom-40) +'px'
+    });
+    $('.technical-name1').css({
+      bottom:(one_bottom + one_height + 15) +'px'
+    });
+    $('.technical-name2').css({
+      bottom:(two_bottom + one_height+ 15) +'px'
+    });
+    $('.technical-name3').css({
+      bottom:(three_bottom + one_height+ 15) +'px'
+    });
     $('.hoop-box').each(function(index, dom) {
       var $dom = $(dom);
       var width = $dom.width();
@@ -22,7 +59,7 @@ var index = {
     var mySwiper = new Swiper('.swiper-container', {
       direction : 'vertical',
       loop: false
-    })
+    });
   },
 
   input_focus: function($obj) {

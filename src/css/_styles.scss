@@ -38,6 +38,7 @@ html {
      width: 10rem;
      top: 10rem;
      transform: rotate(15deg);
+     z-index: 3;
    }
    .slyx-log {
      margin: auto;
@@ -46,13 +47,13 @@ html {
      position: relative;
      z-index: 9;
      &.qrcode-slyx-log {
-       margin-top: 5.5rem;
+       margin-top: 5rem;
      }
    }
    .qrcode-box {
      margin: auto;
      margin-top: 1.5rem;
-     width: 10.5rem;
+     width: 9.5rem;
      z-index: 9;
      position: relative;
    }
@@ -73,6 +74,7 @@ html {
        font-weight: bold;
      }
    }
+
    .swiper-container {
      width: 100%;
      height: 100%;
@@ -100,10 +102,7 @@ html {
        .apply_page {
          width: 100%;
          height: 100%;
-         float: left;
-         background: url(../images/two_back.png) no-repeat;
-         background-size: cover;
-         background-position: center 0%;
+         position: relative;
          .success-share {
            z-index: 0;
          }
@@ -134,20 +133,26 @@ html {
        }
      }
      .swiper-wrapper {
-       padding: 1rem 0;
        box-sizing: border-box;
      }
      .swiper-slide, .apply_page {
        overflow: hidden;
-       background: url(../images/two_back.png) no-repeat;
-       background-size: 100% 100%;
-       background-position: center 0%;
+       .position-absolute {
+         position: absolute;
+         top: 1rem;
+         left: 0;
+         right: 0;
+         bottom: 1rem;
+         background: url(../images/two_back.png) no-repeat;
+         background-size: 100% 100%;
+         background-position: center 0%;
+       }
        .apply-title {
-         margin-top: 1.5rem;
+         margin-top: 1.4rem;
          color: $color1;
-         font-size: 2.5rem;
+         font-size: 2.4rem;
          text-align: center;
-         margin-bottom: 2.25rem;
+         margin-bottom: 2.15rem;
        }
        .input-line {
          width: 85%;
@@ -182,17 +187,6 @@ html {
            font-size: 1.8rem;
          }
        }
-       .share-positon {
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         opacity: 0.6;
-         background: url(../images/zfy.png) no-repeat;
-         background-size: contain;
-         z-index: -1;
-       }
        .help-text {
          color: $color3;
          text-align: center;
@@ -200,7 +194,7 @@ html {
          font-size: 1.5rem;
          &.qrcode-text {
            margin-top: 1.2rem;
-           margin-bottom: 0.5rem;
+           margin-bottom: 1.3rem;
            font-size: 1.3rem;
          }
          &.work-email {
@@ -234,7 +228,7 @@ html {
            }
          }
          &.apply-btn {
-           margin-top: 1rem;
+           margin-top: 1.3rem;
          }
        }
        .reset-share-box {
@@ -355,7 +349,7 @@ html {
              font-size: 1.35rem;
            }
            .device-section-line {
-             margin-top: 2.5rem;
+             margin-top: 2.25rem;
              height: 3rem;
              text-align: center;
              position: relative;
@@ -469,95 +463,38 @@ html {
            position: absolute;
            bottom: 9.4rem;
            top: 15.8rem;
-           left: 0;
-           right: 0;
-           .yx_yun {
-             width: 6rem;
-             height: 4.16667rem;
-             background: url(../images/yx_yun.png) no-repeat;
-             margin-left: -3rem;
-             margin-top: -2.08333rem;
-             z-index: 2;
-           }
-           .imac {
-             width: 5.6rem;
-             height: 4.83333rem;
-             background: url(../images/imac.png) no-repeat;
-             margin-left: -14.8rem;
-             /* margin-top: -7rem; */
-             margin-top: -2.08333rem;
-             z-index: 2;
-           }
-           .iphone {
-             width: 3.375rem;
-             height: 6.75rem;
-             background: url(../images/iphone.png) no-repeat;
-             margin-left: 10.7rem;
-             /* margin-top: -7rem; */
-             margin-top: -2.50333rem;
-             z-index: 2;
-           }
-           .retina {
-             width: 7rem;
-             height: 5rem;
-             background: url(../images/retina.png) no-repeat;
-             top: 100%;
-             margin-left: -3.5rem;
-             z-index: 2;
-             &.no-retina{
-               background: url(../images/no_retina.png) no-repeat;
-               background-size: cover;
-               .table {
-                 height: 100%;
-                 width: 100%;
-                 text-align: center;
-                 color: $color6;
-                 .no-use-text {
-                   font-size: 0.1rem;
-                 }
-                 .no-dp-text {
-                   font-size: 1rem;
-                 }
-               }
-             }
-           }
-           .borer-top {
-             border: dashed $width1 $color5;
-             width: 25rem;
-             height: 80%;
-             margin-left: -12.5rem;
-             border-radius: 100%;
-             z-index: 0;
-             margin-top: -30%;
-           }
-           .center-pos {
+           left: 2em;
+           right: 2rem;
+           .yun_absolute {
              position: absolute;
-             top: 50%;
-             left: 50%;
-             background-size: contain;
-             &.retina{
-               top: 100%;
-               margin-top: -5rem;
+             top:0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             &.yun_line_img {
+               background: url("../images/yun_line_img.png") no-repeat;
+               background-size: contain;
+               background-position: center;
              }
-           }
-           .wifi-common {
-             width: 2.83333rem;
-             height: 2.08333rem;
-             background: url(../images/wifi.png) no-repeat;
-             background-size: contain;
-             margin-left: -1.41667rem;
-             margin-top: -1.04167rem;
-             z-index: 2;
-             &.wifi_imac {
-               transform: rotate(90deg);
-               margin-left: -7.4rem;
+             &.yun_img {
+               background: url("../images/yun_img.png") no-repeat;
+               background-size: contain;
+               background-position: center;
              }
-             &.wifi_iphone {
-               transform: rotate(-90deg);
-               margin-left: 5.35rem;
+             &.imac_img {
+               background: url("../images/imac_img.png") no-repeat;
+               background-size: contain;
+               background-position: center;
              }
-             &.wifi_retina {
-               top: 68%;
+             &.iPhone_img {
+               background: url("../images/iPhone_img.png") no-repeat;
+               background-size: contain;
+               background-position: center;
+             }
+             &.mac_img {
+               background: url("../images/mac_img.png") no-repeat;
+               background-size: contain;
+               background-position: center;
              }
            }
          }
@@ -569,16 +506,16 @@ html {
            color: $color6;
            text-align: center;
            .realize-text {
-             font-size: 1.6rem;
+             font-size: 1.5rem;
            }
            .manage-text {
              font-size: 2.1rem;
              margin-top: 0.8rem;
              margin-bottom: 0.5rem;
              &.no-manage-text {
-               font-size: 1.5rem;
+               font-size: 1.4rem;
                .font-manage {
-                 font-size: 1.8rem;
+                 font-size: 1.7rem;
                }
              }
            }
@@ -601,7 +538,7 @@ html {
            background: url(../images/time_radius1.png) no-repeat;
            background-size: contain;
            background-position: center;
-           animation: radius 2s infinite;
+/*           animation: radius 2s infinite;*/
          }
          .radius_2 {
            width: 70%;
@@ -617,7 +554,7 @@ html {
            bottom: 0;
            opacity: 0.2;
            margin-top: 5%;
-           animation: radius 2s infinite;
+ /*          animation: radius 2s infinite;*/
          }
          .radius_3 {
            position: absolute;
@@ -630,7 +567,7 @@ html {
            background: url(../images/time_radius3.png) no-repeat;
            background-size: contain;
            background-position: center;
-           animation: radius 2s infinite;
+ /*          animation: radius 2s infinite;*/
            opacity: 0.2;
          }
          .radius_4 {
@@ -766,11 +703,11 @@ html {
              z-index: 3;
            }
            .award-icon {
-             width: 7rem;
-             height: 9.25rem;
+             width: 6rem;
+             height: 8.7rem;
              position: absolute;
              left: 50%;
-             margin-left: -3.5rem;
+             margin-left: -3rem;
              bottom: 53.9%;
              z-index: 1;
              &.award1 {
@@ -780,7 +717,7 @@ html {
              &.award2 {
                background: url(../images/award2.png) no-repeat;
                background-size: contain;
-               left: 76.5%;
+               left: 76%;
                bottom: 39.2%;
              }
              &.award3 {
@@ -795,7 +732,7 @@ html {
              position: absolute;
              left: 50%;
              color: $color1;
-             font-size: 1.8rem;
+             font-size: 1.45rem;
              margin-left: -5rem;
              text-align: center;
              bottom: 90%;
@@ -834,9 +771,9 @@ html {
          .title {
            color: $color1;
            margin-top: 4.5rem;
-           font-size: 3.1rem;
+           font-size: 3rem;
            text-align: center;
-           margin-bottom: 3rem;
+           margin-bottom: 2rem;
          }
          .left-content {
            text-align: left;
@@ -853,20 +790,20 @@ html {
            .border-line {
              height: $width1;
              background: linear-gradient(to left, $color9 0%, transparent 80%);
-             margin: 0.3rem 0;
+             margin: 0.5rem 0;
            }
          }
          .year-box {
            color: $color6;
-           font-size: 1.8rem;
+           font-size: 1.7rem;
            font-weight: bold;
          }
          .diary-text {
-           font-size: 1.4rem;
+           font-size: 1.3rem;
            color: $color10;
-           line-height: 1.8rem;
+           line-height: 1.7rem;
            .bold-text{
-             font-size: 1.5rem;
+             font-size: 1.4rem;
              color: $color1;
              margin: 0 0.1rem;
              font-weight: bold;
@@ -874,7 +811,7 @@ html {
          }
          .time-box {
            color: $color1;
-           font-size: 1.6rem;
+           font-size: 1.55rem;
            font-weight: bold;
          }
        }
@@ -1064,15 +1001,15 @@ html {
      position: absolute;
      left: 0;
      right: 0;
-     bottom: 1.6rem;
+     bottom: 1rem;
      padding: 0 1.4rem;
      z-index: 99;
      .by-line {
        border-bottom: solid $width1 $color1;
-       width: 78%;
+       width: 76%;
      }
      .by-text {
-       width: 22%;
+       width: 24%;
        color: $color1;
        text-align: right;
        font-size: 1.1rem;
@@ -1096,5 +1033,160 @@ html {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width:319px) and (max-width:359px){
+  html{
+    body {
+      .by-bottom {
+        .by-line {
+          width: 71%;
+        }
+        .by-text {
+          width: 28.5%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:411px) {
+  html{
+    body {
+      .slyx-log {
+        &.qrcode-slyx-log {
+          margin-top: 7rem;
+          width: 12rem;
+        }
+      }
+      .qrcode-box {
+        margin-top: 2rem;
+        width: 11rem;
+      }
+      .by-bottom {
+        .by-line {
+          width: 71%;
+        }
+        .by-text {
+          width: 28.5%;
+        }
+      }
+      .swiper-container {
+        .swiper-slide, .apply_page {
+          .help-text  {
+            &.qrcode-text {
+              &.success-qrcode-text {
+                margin-top: 1.6rem;
+                margin-bottom: 4rem;
+              }
+            }
+          }
+          .thanks-text {
+            line-height: 2.5rem;
+            font-size: 1.6rem;
+          }
+          .common-btn {
+            &.apply-btn {
+              margin-top: 3rem;
+            }
+          }
+          .reset-share-box {
+            &.success-reset {
+              margin-top: 3rem !important;
+            }
+          }
+          &.standing-book  {
+            .standing-content{
+              .standing-value{
+                margin-top: 6rem;
+                margin-bottom: 2rem;
+                line-height: 3rem;
+              }
+              .hoop-content {
+                .standing-exact{
+                  font-size: 1.3rem;
+                  margin-top: 1rem;
+                }
+              }
+              .standing-detail-img {
+                width: 100%;
+              }
+              .cogradient-text {
+                font-size: 2.2rem;
+              }
+            }
+          }
+          &.device-ranking {
+            .device-order {
+              margin-top: 5.5rem;
+              padding-bottom: 3.3rem;
+              .rank-title {
+                margin-top: 2.3rem;
+              }
+              .device-section-line {
+                margin-top: 3.3rem;
+              }
+            }
+            .device-summing {
+              .summing-head {
+                &.margin-top{
+                  margin-top: 3rem;
+                  margin-bottom: -0.1rem;
+                }
+                &.summing-rotate {
+                  margin-top: -0.1rem;
+                }
+              }
+              .summing-content {
+                .save-border {
+                  margin: 1.5rem 1rem;
+                }
+                .device-status {
+                  margin-bottom: 1rem;
+                }
+              }
+            }
+          }
+          &.device-diary {
+            .title {
+              margin-top: 6.5rem;
+              margin-bottom: 3rem;
+            }
+            .left-content {
+              margin-left: 2rem;
+              .border-line {
+                margin: 0.7rem 0;
+              }
+            }
+            .right-content {
+              margin-right: 2rem;
+              .border-line {
+                margin: 0.7rem 0;
+              }
+            }
+            .diary-text {
+              line-height: 2rem;
+            }
+          }
+          &.apply-form-slide {
+            .slyx-log {
+              margin-top: 7rem;
+              width: 12rem;
+            }
+            .apply-title {
+              margin-top: 2rem;
+              margin-bottom: 2.3rem;
+            }
+            .input-line {
+              margin-top: 2rem;
+            }
+            .submit-box {
+              margin-top: 2rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
