@@ -36,6 +36,42 @@
         <div class="home-back"></div>
         <div class="home-line"></div>
       </div>
+      <div class="swiper-slide time-axle">
+        <div class="time-icon">
+          <img src="images/time-icon.png" alt="">
+        </div>
+        <div class="radius_1"></div>
+        <div class="radius_2"></div>
+        <div class="radius_3"></div>
+        <div class="radius_4"></div>
+        <div class="min-radius-1 min-radius"></div>
+        <div class="min-radius-2 min-radius"></div>
+        <div class="min-radius-3 min-radius"></div>
+        <div class="min-radius-line min-radius-line1"></div>
+        <div class="min-radius-line min-radius-line2"></div>
+        <div class="axle-content axle-content1">
+          <div class="axle-time">2017.04.18</div>
+          <div class="axle-title">录入了第一台设备</div>
+          <div class="axle-name">设备名称</div>
+        </div>
+        <div class="axle-content axle-content2">
+          <div class="axle-time">2017.04.18</div>
+          <div class="axle-title">录入了第一台设备</div>
+          <div class="axle-name">设备名称</div>
+        </div>
+        <div class="axle-content axle-content3">
+          <div class="axle-time" style="display: none">2017.04.18</div>
+          <div class="axle-name" style="display: none">设备名称</div>
+          <div class="axle-time">2017.04.18</div>
+          <div class="axle-title">录入了第一台设备</div>
+          <div class="axle-name-owl">累计实时监测设备</div>
+          <div class="axle-name-owl">状态<span class="owl-bold">238</span>小时</div>
+        </div>
+        <div class="by-bottom">
+          <div class="display-middle by-line"></div>
+          <div class="display-middle by-text">by 数联医信</div>
+        </div>
+      </div>
       <div class="swiper-slide standing-book">
         <div class="standing-content">
           <div class="standing-content">
@@ -48,8 +84,8 @@
                   <div class="table-cell">100%</div>
                 </div>
                 @@include('./toop_outer.html', {
-                  "num": 16,
-                  "nav":"outer"
+                "num": 16,
+                "nav":"outer"
                 })
                 @@include('./toop_outer.html', {
                 "num": 16,
@@ -75,50 +111,24 @@
           <div class="display-middle by-text">by 数联医信</div>
         </div>
       </div>
-      <div class="swiper-slide device-ranking">
-        <div class="device-order">
-          <div class="device-middle-line"></div>
-          <div>
-            <div class="display-middle half-width">
-              <div class="rank-title">设备可用率</div>
-              <div class="rank-explain">TOP5 设备</div>
-            </div>
-            <div class="display-middle half-width">
-              <div class="rank-title">及时修复率</div>
-              <div class="rank-explain">TOP5 科室</div>
-            </div>
-          </div>
-          <div class="device-section-line">
-            <div class="radius1">
-              <img src="images/radius1.png" alt="">
-            </div>
-            <div class="device-section-content display-middle">某某设备名称</div>
-            <div class="device-section-content display-middle">某某设备名称</div>
-          </div>
-          <div class="device-section-line section-line-color">
-            <div class="radius1">
-              <img src="images/radius2.png" alt="">
-            </div>
-            <div class="device-section-content display-middle">某某设备名称</div>
-            <div class="device-section-content display-middle">某某设备名称</div>
-          </div>
-          <div class="device-section-line section-line-color">
-            <div class="radius1">
-              <img src="images/radius3.png" alt="">
-            </div>
-            <div class="device-section-content display-middle">某某设备名称</div>
-            <div class="device-section-content display-middle">某某设备名称</div>
-          </div>
+      <div class="swiper-slide technical-ranking">
+        <div class="technical-alert">设备关注度最高,反应最快</div>
+        <div class="top-ranking">TOP 3 科室</div>
+        <div class="cup-box">
+          <div class="cup-tower"></div>
+          <div class="cup-bar"></div>
+          <div class="award1 award-icon"></div>
+          <div class="award2 award-icon"></div>
+          <div class="award3 award-icon"></div>
+          <div class="technical-name technical-name1">科室名称</div>
+          <div class="technical-name technical-name2">科室名称</div>
+          <div class="technical-name technical-name3">科室名称</div>
+          <div class="technical-num technical-num1">1</div>
+          <div class="technical-num technical-num2">2</div>
+          <div class="technical-num technical-num3">3</div>
         </div>
-        <div class="device-summing">
-          <div class="summing-head margin-top"></div>
-          <div class="summing-content">
-            <div class="save-line">2016年累计节约<span class="save-time">243小时</span>维修时间</div>
-            <div class="save-border"></div>
-            <div class="device-status">设备正常运转</div>
-            <div class="status-text">为保证患者生命质量提供最及时支持</div>
-          </div>
-          <div class="summing-rotate summing-head"></div>
+        <div class="technical-chapter chapter-icon">
+          <img src="images/technical-chapter.png" alt="">
         </div>
         <div class="by-bottom">
           <div class="display-middle by-line"></div>
@@ -176,60 +186,50 @@
           <div class="display-middle by-text">by 数联医信</div>
         </div>
       </div>
-      <div class="swiper-slide time-axle">
-        <div class="time-icon">
-          <img src="images/time-icon.png" alt="">
+      <div class="swiper-slide device-ranking">
+        <div class="device-order">
+          <div class="device-middle-line"></div>
+          <div>
+            <div class="display-middle half-width">
+              <div class="rank-title">设备可用率</div>
+              <div class="rank-explain">TOP5 设备</div>
+            </div>
+            <div class="display-middle half-width">
+              <div class="rank-title">及时修复率</div>
+              <div class="rank-explain">TOP5 科室</div>
+            </div>
+          </div>
+          <div class="device-section-line">
+            <div class="radius1">
+              <img src="images/radius1.png" alt="">
+            </div>
+            <div class="device-section-content display-middle">某某设备名称</div>
+            <div class="device-section-content display-middle">某某设备名称</div>
+          </div>
+          <div class="device-section-line section-line-color">
+            <div class="radius1">
+              <img src="images/radius2.png" alt="">
+            </div>
+            <div class="device-section-content display-middle">某某设备名称</div>
+            <div class="device-section-content display-middle">某某设备名称</div>
+          </div>
+          <div class="device-section-line section-line-color">
+            <div class="radius1">
+              <img src="images/radius3.png" alt="">
+            </div>
+            <div class="device-section-content display-middle">某某设备名称</div>
+            <div class="device-section-content display-middle">某某设备名称</div>
+          </div>
         </div>
-        <div class="radius_1"></div>
-        <div class="radius_2"></div>
-        <div class="radius_3"></div>
-        <div class="radius_4"></div>
-        <div class="min-radius-1 min-radius"></div>
-        <div class="min-radius-2 min-radius"></div>
-        <div class="min-radius-3 min-radius"></div>
-        <div class="min-radius-line min-radius-line1"></div>
-        <div class="min-radius-line min-radius-line2"></div>
-        <div class="axle-content axle-content1">
-          <div class="axle-time">2017.04.18</div>
-          <div class="axle-title">录入了第一台设备</div>
-          <div class="axle-name">设备名称</div>
-        </div>
-        <div class="axle-content axle-content2">
-          <div class="axle-time">2017.04.18</div>
-          <div class="axle-title">录入了第一台设备</div>
-          <div class="axle-name">设备名称</div>
-        </div>
-        <div class="axle-content axle-content3">
-          <div class="axle-time" style="display: none">2017.04.18</div>
-          <div class="axle-name" style="display: none">设备名称</div>
-          <div class="axle-time">2017.04.18</div>
-          <div class="axle-title">录入了第一台设备</div>
-          <div class="axle-name-owl">累计实时监测设备</div>
-          <div class="axle-name-owl">状态<span class="owl-bold">238</span>小时</div>
-        </div>
-        <div class="by-bottom">
-          <div class="display-middle by-line"></div>
-          <div class="display-middle by-text">by 数联医信</div>
-        </div>
-      </div>
-      <div class="swiper-slide technical-ranking">
-        <div class="technical-alert">设备关注度最高,反应最快</div>
-        <div class="top-ranking">TOP 3 科室</div>
-        <div class="cup-box">
-          <div class="cup-tower"></div>
-          <div class="cup-bar"></div>
-          <div class="award1 award-icon"></div>
-          <div class="award2 award-icon"></div>
-          <div class="award3 award-icon"></div>
-          <div class="technical-name technical-name1">科室名称</div>
-          <div class="technical-name technical-name2">科室名称</div>
-          <div class="technical-name technical-name3">科室名称</div>
-          <div class="technical-num technical-num1">1</div>
-          <div class="technical-num technical-num2">2</div>
-          <div class="technical-num technical-num3">3</div>
-        </div>
-        <div class="technical-chapter chapter-icon">
-          <img src="images/technical-chapter.png" alt="">
+        <div class="device-summing">
+          <div class="summing-head margin-top"></div>
+          <div class="summing-content">
+            <div class="save-line">2016年累计节约<span class="save-time">243小时</span>维修时间</div>
+            <div class="save-border"></div>
+            <div class="device-status">设备正常运转</div>
+            <div class="status-text">为保证患者生命质量提供最及时支持</div>
+          </div>
+          <div class="summing-rotate summing-head"></div>
         </div>
         <div class="by-bottom">
           <div class="display-middle by-line"></div>
@@ -279,6 +279,56 @@
             当天工作时长超过<span class="bold-text">14</span>小时
           </div>
           <div class="border-line"></div>
+        </div>
+        <div class="by-bottom">
+          <div class="display-middle by-line"></div>
+          <div class="display-middle by-text">by 数联医信</div>
+        </div>
+      </div>
+      <div class="swiper-slide star_worker">
+        <div class="worker-content">
+          <div class="worker-line">
+            <div class="worker-img display-middle"></div>
+            <div class="worker-con">
+              <div class="worker-title">
+                <span class="arrow">
+                  <img src="images/worker_arrow.png" alt="">
+                </span>
+                <span class="">闪电侠</span>
+              </div>
+              <div class="worker-name">医工姓名</div>
+              <div class="worker-describe">接修反应时长最短</div>
+            </div>
+          </div>
+          <div class="worker-line odd-line">
+            <div class="worker-img display-middle"></div>
+            <div class="worker-con">
+              <div class="worker-title">
+                <span class="arrow">
+                  <img src="images/worker_arrow.png" alt="">
+                </span>
+                <span class="">闪电侠</span>
+              </div>
+              <div class="worker-name">医工姓名</div>
+              <div class="worker-describe">接修反应时长最短接修反应时长最短</div>
+            </div>
+          </div>
+          <div class="worker-line">
+            <div class="worker-img display-middle"></div>
+            <div class="worker-con">
+              <div class="worker-title">
+                <span class="arrow">
+                  <img src="images/worker_arrow.png" alt="">
+                </span>
+                <span class="">闪电侠</span>
+              </div>
+              <div class="worker-name">医工姓名</div>
+              <div class="worker-describe">接修反应时长最短</div>
+            </div>
+          </div>
+        </div>
+        <div class="chapter-icon">
+          <img src="images/worker_chapter.png" alt="">
         </div>
         <div class="by-bottom">
           <div class="display-middle by-line"></div>

@@ -131,11 +131,11 @@ gulp.task('del-dist', function () {
 });
 gulp.task('build-dist-img', function () {
 	return mkRev(gulp.src([pathConfig.src + "**/images/*.*", pathConfig.src + "**/images/**/*.*"])
-		.pipe(pkg.cache(pkg.if(img, pkg.imagemin({
+		.pipe(pkg.if(img, pkg.imagemin({
 			progressive: true,
 			interlaced: true,
 			use: [pngquant()]
-		}))))
+		})))
 		.pipe(gulp.dest(pathConfig.dist))
 		.pipe(browserSync.reload({
 			stream: true
