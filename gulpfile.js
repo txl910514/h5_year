@@ -67,6 +67,9 @@ var condition = function (file) {
 	if(file_path === pathConfig.src + 'js/jslib/underscore.js') {
 		return false;
 	}
+	else if(file_path === pathConfig.src + 'js/gq/1.mp3') {
+		return false;
+	}
 	else {
 		return true;
 	}
@@ -74,7 +77,7 @@ var condition = function (file) {
 var js_uglify = function(file) {
 	if (yargs.pub === 'url') {
 		var file_path = file.history[0].replace(file.cwd+'/', '');
-		var indexOf =  file_path.indexOf('.json');
+		var indexOf =  file_path.indexOf('.mp3');
 		if(indexOf > -1) {
 			return false;
 		}
