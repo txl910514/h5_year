@@ -12,6 +12,7 @@ html {
  body {
    margin: 0;
    padding: 0;
+   overflow: hidden;
    div, button, input {
      box-sizing: border-box;
    }
@@ -74,7 +75,112 @@ html {
        font-weight: bold;
      }
    }
-
+   .apply_success {
+     display: none;
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     z-index: 10;
+     background: url(../images/all_back.png) no-repeat;
+     background-size: cover;
+     padding: 0 1rem;
+     box-sizing: border-box;
+     &#form-page {
+       .apply_page {
+         overflow: hidden;
+         .position-absolute {
+           position: absolute;
+           top: 1rem;
+           left: 0;
+           right: 0;
+           bottom: 1rem;
+           background: url(../images/two_back.png) no-repeat;
+           background-size: 100% 100%;
+           background-position: center 0%;
+           .apply-title {
+             margin-top: 1.4rem;
+             color: $color1;
+             font-size: 2.4rem;
+             text-align: center;
+             margin-bottom: 2.15rem;
+           }
+           .input-line {
+             width: 85%;
+             height: 3.8rem;
+             margin: auto;
+             line-height: 3rem;
+             margin-top: 1.2rem;
+             background: $color4;
+             border: solid $width1 $color1;
+             border-radius: $radius5;
+             font-size: 1.8rem;
+             padding-left: 1.2rem;
+             input {
+               border: 0;
+               background: transparent;
+               height: 100%;
+               width: 100%;
+               font-size: 1.8rem;
+             }
+           }
+           .submit-box {
+             width: 85%;
+             height: 4rem;
+             margin: auto;
+             margin-top: 1.2rem;
+             .submit-btn {
+               background: $color1;
+               color: $color4;
+               width: 100%;
+               height: 100%;
+               line-height: 3.5rem;
+               font-size: 1.8rem;
+             }
+           }
+           .help-text {
+             color: $color3;
+             text-align: center;
+             margin-top: 1rem;
+             font-size: 1.5rem;
+           }
+         }
+       }
+     }
+     .apply_page {
+       width: 100%;
+       height: 100%;
+       position: relative;
+       .success-share {
+         z-index: 0;
+       }
+       .success_alert {
+         width: 100%;
+         text-align: center;
+         color: $color7;
+         font-size: 2.2rem;
+         .success_icon {
+           width: 3.5rem;
+           margin-right: 1rem;
+         }
+       }
+       .success-qrcode {
+         margin-top: 2rem;
+       }
+       .success-qrcode-text {
+         &.help-text {
+           margin-top: 1.5rem;
+           margin-bottom: 1rem;
+         }
+       }
+       .reset-share-box {
+         &.success-reset {
+           margin-top: 0.5rem;
+         }
+       }
+     }
+   }
    .swiper-container {
      width: 100%;
      height: 100%;
@@ -87,58 +193,6 @@ html {
      background-size: cover;
      padding: 0 1rem;
      box-sizing: border-box;
-     .apply_success {
-       display: none;
-       position: absolute;
-       top: 0;
-       left: 0;
-       right: 0;
-       bottom: 0;
-       z-index: 10;
-       background: url(../images/all_back.png) no-repeat;
-       background-size: cover;
-       padding: 0 1rem;
-       box-sizing: border-box;
-       &#form-page {
-         .apply_page {
-           .position-absolute {
-             overflow: auto;
-           }
-         }
-       }
-       .apply_page {
-         width: 100%;
-         height: 100%;
-         position: relative;
-         .success-share {
-           z-index: 0;
-         }
-         .success_alert {
-           width: 100%;
-           text-align: center;
-           color: $color7;
-           font-size: 2.2rem;
-           .success_icon {
-             width: 3.5rem;
-             margin-right: 1rem;
-           }
-         }
-         .success-qrcode {
-           margin-top: 2rem;
-         }
-         .success-qrcode-text {
-           &.help-text {
-             margin-top: 1.5rem;
-             margin-bottom: 1rem;
-           }
-         }
-         .reset-share-box {
-           &.success-reset {
-             margin-top: 0.5rem;
-           }
-         }
-       }
-     }
      .swiper-wrapper {
        box-sizing: border-box;
      }
@@ -154,46 +208,8 @@ html {
          background-size: 100% 100%;
          background-position: center 0%;
        }
-       .apply-title {
-         margin-top: 1.4rem;
-         color: $color1;
-         font-size: 2.4rem;
-         text-align: center;
-         margin-bottom: 2.15rem;
-       }
-       .input-line {
-         width: 85%;
-         height: 3.8rem;
-         margin: auto;
-         line-height: 3rem;
-         margin-top: 1.2rem;
-         background: $color4;
-         border: solid $width1 $color1;
-         border-radius: $radius5;
-         font-size: 1.8rem;
-         padding-left: 1.2rem;
-         input {
-           border: 0;
-           background: transparent;
-           height: 100%;
-           width: 100%;
-           font-size: 1.8rem;
-         }
-       }
-       .submit-box {
-         width: 85%;
-         height: 4rem;
-         margin: auto;
-         margin-top: 1.2rem;
-         .submit-btn {
-           background: $color1;
-           color: $color4;
-           width: 100%;
-           height: 100%;
-           line-height: 3.5rem;
-           font-size: 1.8rem;
-         }
-       }
+
+
        .help-text {
          color: $color3;
          text-align: center;
@@ -1103,6 +1119,28 @@ html {
 @media screen and (min-width:411px) and (max-width:415px) {
   html{
     body {
+      .apply_success {
+        &.form-page {
+          .apply_page {
+            .position-absolute {
+              .slyx-log {
+                margin-top: 6rem;
+                width: 12rem;
+              }
+              .apply-title {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+              }
+              .input-line {
+                margin-top: 1.6rem;
+              }
+              .submit-box {
+                margin-top: 1.8rem;
+              }
+            }
+          }
+        }
+      }
       .slyx-log {
         &.qrcode-slyx-log {
           margin-top: 7rem;
@@ -1216,22 +1254,6 @@ html {
             }
             .year-box {
               margin-top: 0.6rem;
-            }
-          }
-          &.apply-form-slide {
-            .slyx-log {
-              margin-top: 6rem;
-              width: 12rem;
-            }
-            .apply-title {
-              margin-top: 2rem;
-              margin-bottom: 2rem;
-            }
-            .input-line {
-              margin-top: 1.6rem;
-            }
-            .submit-box {
-              margin-top: 1.8rem;
             }
           }
           &.star_worker {

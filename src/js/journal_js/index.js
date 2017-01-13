@@ -126,9 +126,29 @@ var index = {
     setTimeout(function() {
       var $input_parent = $obj.parent();
       var posioton_top = $input_parent.position().top;
-      var $apply_form_slide = $input_parent.closest('.apply-form-slide');
+      var $apply_form_slide = $input_parent.closest('.form');
       $apply_form_slide.scrollTop(posioton_top);
     }, 500);
+  },
+
+  apply_form: function($form) {
+    var data = $form.serialize();
+    var url = '<%=base%>' + $form.attr('url');
+    COMMON_FUNC.ajax_get($form, data, url, 'form_callback', function(result){
+
+    });
+  },
+
+  my_share: function() {
+    $('#prompt_back').css('display', 'block');
+  },
+
+  prompt_back: function() {
+    $('#prompt_back').css('display', 'none');
+  },
+
+  apply_btn: function() {
+    
   }
 };
 
@@ -136,5 +156,13 @@ $(function(){
   index.ready_init();
 }).on('click', '.input-line input', function(e) {
   index.input_focus($(this));
-}).on('submit', '')
-;
+}).on('submit', '#apply_form', function() {
+  index.apply_form($(this));
+  return false;
+}).on('click', '.my-share', function() {
+  index.my_share();
+}).on('click', '#prompt_back', function() {
+  index.prompt_back();
+}).on('click', '#apply-btn', function() {
+  index.apply_btn();
+});
