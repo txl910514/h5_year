@@ -35,8 +35,8 @@ html {
    .chapter-icon {
      position: absolute;
      right: 3rem;
-     width: 10rem;
-     top: 10rem;
+     width: 9rem;
+     top: 7rem;
      transform: rotate(15deg);
      z-index: 3;
    }
@@ -99,6 +99,13 @@ html {
        background-size: cover;
        padding: 0 1rem;
        box-sizing: border-box;
+       &#form-page {
+         .apply_page {
+           .position-absolute {
+             overflow: auto;
+           }
+         }
+       }
        .apply_page {
          width: 100%;
          height: 100%;
@@ -371,6 +378,16 @@ html {
                color: $color6;
                line-height: 3.35rem;
                position: relative;
+               text-align: right;
+               padding-right: 2.5rem;
+               overflow: hidden;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+               &.right {
+                 text-align: left;
+                 padding-left: 2.5rem;
+                 padding-right: 0;
+               }
              }
              &.section-line-color {
                .device-section-content {
@@ -400,13 +417,13 @@ html {
              background: url(../images/summing_line.png) repeat;
              background-size: contain;
              padding: 0 0.5rem;
-             font-size: 1.45rem;
+             font-size: 1.35rem;
              font-weight: bold;
              color: $color6;
              text-align: center;
              .save-line {
                .save-time {
-                 font-size: 1.65rem;
+                 font-size: 1.5rem;
                  color: $color1;
                }
              }
@@ -493,6 +510,16 @@ html {
              }
              &.mac_img {
                background: url("../images/mac_img.png") no-repeat;
+               background-size: contain;
+               background-position: center;
+             }
+             &.no_mac_img {
+               background: url("../images/mac1_img.png") no-repeat;
+               background-size: contain;
+               background-position: center;
+             }
+             &.no_mac_text {
+               background: url("../images/no_mac_text.png") no-repeat;
                background-size: contain;
                background-position: center;
              }
@@ -629,19 +656,26 @@ html {
            left: 50%;
            .axle-time {
              color: $color6;
-             font-size: 1.6rem;
+             font-size: 1.5rem;
              font-weight: bold;
              margin-bottom: 0.3rem;
+             padding-right: 0.8rem;
            }
            .axle-title {
              color: $color3;
              font-size: 1.2rem;
              margin-bottom: 0.3rem;
+             padding-right: 0.8rem;
+             .axle-bold{
+               color: $color1;
+             }
+
            }
            .axle-name {
              color: $color1;
-             font-size: 1.6rem;
+             font-size: 1.5rem;
              font-weight: bold;
+             padding-right: 0.8rem;
            }
            .axle-name-owl {
              color: $color1;
@@ -893,9 +927,24 @@ html {
              .worker-img {
                width: 55%;
                height: 100%;
-               background: url("../images/sdx_left.png") no-repeat;
                background-size: cover;
                background-position: 0% center;
+               background-repeat: no-repeat;
+               &.worker-img1 {
+                 background-image: url('../images/worker1.png');
+               }
+               &.worker-img2 {
+                 background-image: url('../images/worker2.png');
+               }
+               &.worker-img3 {
+                 background-image: url('../images/worker3.png');
+               }
+               &.worker-img4 {
+                 background-image: url('../images/worker4.png');
+               }
+               &.worker-img5 {
+                 background-image: url('../images/worker5.png');
+               }
              }
              .worker-con {
                 position: absolute;
@@ -1051,7 +1100,7 @@ html {
   }
 }
 
-@media screen and (min-width:411px) {
+@media screen and (min-width:411px) and (max-width:415px) {
   html{
     body {
       .slyx-log {
@@ -1062,7 +1111,7 @@ html {
       }
       .qrcode-box {
         margin-top: 2rem;
-        width: 11rem;
+        width: 10rem;
       }
       .by-bottom {
         .by-line {
@@ -1078,60 +1127,57 @@ html {
             &.qrcode-text {
               &.success-qrcode-text {
                 margin-top: 1.6rem;
-                margin-bottom: 4rem;
+                margin-bottom: 2.8rem;
               }
             }
           }
           .thanks-text {
-            line-height: 2.5rem;
+            line-height: 2.4rem;
             font-size: 1.6rem;
           }
           .common-btn {
             &.apply-btn {
-              margin-top: 3rem;
+              margin-top: 1.2rem;
             }
           }
           .reset-share-box {
             &.success-reset {
-              margin-top: 3rem !important;
+              margin-top: 2.2rem !important;
             }
           }
           &.standing-book  {
             .standing-content{
               .standing-value{
-                margin-top: 6rem;
-                margin-bottom: 2rem;
-                line-height: 3rem;
+                margin-top: 5rem;
+                margin-bottom: 1rem;
+                line-height: 2.4rem;
               }
               .hoop-content {
                 .standing-exact{
-                  font-size: 1.3rem;
-                  margin-top: 1rem;
+                  font-size: 1.2rem;
+                  margin-top: 0.8rem;
                 }
               }
               .standing-detail-img {
-                width: 100%;
-              }
-              .cogradient-text {
-                font-size: 2.2rem;
+                width: 85%;
               }
             }
           }
           &.device-ranking {
             .device-order {
-              margin-top: 5.5rem;
-              padding-bottom: 3.3rem;
+              margin-top: 5rem;
+              padding-bottom: 2rem;
               .rank-title {
-                margin-top: 2.3rem;
+                margin-top: 2rem;
               }
               .device-section-line {
-                margin-top: 3.3rem;
+                margin-top: 2.4rem;
               }
             }
             .device-summing {
               .summing-head {
                 &.margin-top{
-                  margin-top: 3rem;
+                  margin-top: 1.4rem;
                   margin-bottom: -0.1rem;
                 }
                 &.summing-rotate {
@@ -1140,49 +1186,58 @@ html {
               }
               .summing-content {
                 .save-border {
-                  margin: 1.5rem 1rem;
+                  margin: 1.2rem 1rem;
                 }
                 .device-status {
-                  margin-bottom: 1rem;
+                  margin-bottom: 0.5rem;
                 }
               }
             }
           }
           &.device-diary {
             .title {
-              margin-top: 6.5rem;
-              margin-bottom: 3rem;
+              margin-top: 5rem;
+              margin-bottom: 2.3rem;
             }
             .left-content {
               margin-left: 2rem;
               .border-line {
-                margin: 0.7rem 0;
+                margin: 0.5rem 0;
               }
             }
             .right-content {
               margin-right: 2rem;
               .border-line {
-                margin: 0.7rem 0;
+                margin: 0.45rem 0;
               }
             }
             .diary-text {
-              line-height: 2rem;
+              line-height: 1.8rem;
+            }
+            .year-box {
+              margin-top: 0.6rem;
             }
           }
           &.apply-form-slide {
             .slyx-log {
-              margin-top: 7rem;
+              margin-top: 6rem;
               width: 12rem;
             }
             .apply-title {
               margin-top: 2rem;
-              margin-bottom: 2.3rem;
+              margin-bottom: 2rem;
             }
             .input-line {
-              margin-top: 2rem;
+              margin-top: 1.6rem;
             }
             .submit-box {
-              margin-top: 2rem;
+              margin-top: 1.8rem;
+            }
+          }
+          &.star_worker {
+            .chapter-icon {
+              top: 5rem;
+              right: 2rem;
             }
           }
         }

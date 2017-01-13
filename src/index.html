@@ -23,13 +23,13 @@
   </script>
 </head>
 <body>
-  <div class="swiper-container">
+  <div class="swiper-container" url="/ydh5/gethosinfo" id="init-url">
     <div class="swiper-wrapper">
       <div class="swiper-slide home_page">
         <div class="position-absolute">
           <div class="home-time">2016</div>
           <div class="home-report">年度报告</div>
-          <div class="home-name">四川省人民医院</div>
+          <div class="home-name" id="hospitalName"></div>
           <div class="home-theme">[ 设备篇 ]</div>
           <div class="bottom_slyx_log">
             <img src="images/slyx_log.png" alt="">
@@ -52,23 +52,8 @@
           <div class="min-radius-3 min-radius"></div>
           <div class="min-radius-line min-radius-line1"></div>
           <div class="min-radius-line min-radius-line2"></div>
-          <div class="axle-content axle-content1">
-            <div class="axle-time">2017.04.18</div>
-            <div class="axle-title">录入了第一台设备</div>
-            <div class="axle-name">设备名称</div>
-          </div>
-          <div class="axle-content axle-content2">
-            <div class="axle-time">2017.04.18</div>
-            <div class="axle-title">录入了第一台设备</div>
-            <div class="axle-name">设备名称</div>
-          </div>
-          <div class="axle-content axle-content3">
-            <div class="axle-time" style="display: none">2017.04.18</div>
-            <div class="axle-name" style="display: none">设备名称</div>
-            <div class="axle-time">2017.04.18</div>
-            <div class="axle-title">录入了第一台设备</div>
-            <div class="axle-name-owl">累计实时监测设备</div>
-            <div class="axle-name-owl">状态<span class="owl-bold">238</span>小时</div>
+          <div id="time_tpl_html">
+
           </div>
           <div class="by-bottom">
             <div class="display-middle by-line"></div>
@@ -81,7 +66,8 @@
           <div class="standing-content">
             <div class="standing-content">
               <div class="standing-value">
-                您通过医信云服完成了<span class="standing-bold">160</span>台设备盘点,估值达<span class="standing-bold">10万+</span>
+                您通过医信云服完成了<span class="standing-bold" id="numberEquipment"></span>台设备盘点,估值达
+                <span class="standing-bold" id="valueEquipment"></span>
               </div>
               <div class="hoop-content">
                 <div class="hoop-box">
@@ -127,12 +113,10 @@
             <div class="award1 award-icon"></div>
             <div class="award2 award-icon"></div>
             <div class="award3 award-icon"></div>
-            <div class="technical-name technical-name1">科室名称</div>
-            <div class="technical-name technical-name2">科室名称</div>
-            <div class="technical-name technical-name3">科室名称</div>
             <div class="technical-num technical-num1">1</div>
             <div class="technical-num technical-num2">2</div>
             <div class="technical-num technical-num3">3</div>
+            <div id="technical_tpl_html"></div>
           </div>
           <div class="technical-chapter chapter-icon">
             <img src="images/technical-chapter.png" alt="">
@@ -148,37 +132,15 @@
           <div class="text-right">
             <div class="title-icon display-middle">已有设备管理渠道</div>
           </div>
-          <div class="triunity-text" style="display: none">“三位一体”</div>
-          <div class="tool-text" style="display: none">
-            <span class="display-middle">手机</span>
-            <span class="display-middle">+</span>
-            <span class="display-middle">web</span>
-            <span class="display-middle">+</span>
-            <span class="display-middle">大屏</span>
-          </div>
-          <div class="no-tool-text tool-text">
-            <span class="display-middle">手机</span>
-            <span class="display-middle">+</span>
-            <span class="display-middle">web</span>
-          </div>
-          <div class="no-triunity-text triunity-text">“随时随地的设备监测和管理”</div>
+          <div id="use_mac_html"></div>
           <div class="img-yun-box">
             <div class="yun_line_img yun_absolute"></div>
             <div class="yun_img yun_absolute"></div>
             <div class="imac_img yun_absolute"></div>
             <div class="iPhone_img yun_absolute"></div>
-            <div class="mac_img yun_absolute"></div>
+            <div id="mac_img_html"></div>
           </div>
-          <div class="bottom-triunity" style="display: none">
-            <div class="realize-text">您已实现医疗设备</div>
-            <div class="manage-text">“全面立体，实时监测”管理</div>
-          </div>
-          <div class="bottom-triunity">
-            <div class="realize-text">立刻与MEMS申请数字大屏</div>
-            <div class="manage-text no-manage-text">
-              即可实现<span class="font-manage">“三位一体”</span>设备全息立体管理。
-            </div>
-          </div>
+          <div class="bottom-triunity"></div>
           <div class="by-bottom">
             <div class="display-middle by-line"></div>
             <div class="display-middle by-text">by 数联医信</div>
@@ -192,39 +154,19 @@
             <div>
               <div class="display-middle half-width">
                 <div class="rank-title">设备可用率</div>
-                <div class="rank-explain">TOP5 设备</div>
+                <div class="rank-explain">TOP3 设备</div>
               </div>
               <div class="display-middle half-width">
                 <div class="rank-title">及时修复率</div>
-                <div class="rank-explain">TOP5 科室</div>
+                <div class="rank-explain">TOP3 科室</div>
               </div>
             </div>
-            <div class="device-section-line">
-              <div class="radius1">
-                <img src="images/radius1.png" alt="">
-              </div>
-              <div class="device-section-content display-middle">某某设备名称</div>
-              <div class="device-section-content display-middle">某某设备名称</div>
-            </div>
-            <div class="device-section-line section-line-color">
-              <div class="radius1">
-                <img src="images/radius2.png" alt="">
-              </div>
-              <div class="device-section-content display-middle">某某设备名称</div>
-              <div class="device-section-content display-middle">某某设备名称</div>
-            </div>
-            <div class="device-section-line section-line-color">
-              <div class="radius1">
-                <img src="images/radius3.png" alt="">
-              </div>
-              <div class="device-section-content display-middle">某某设备名称</div>
-              <div class="device-section-content display-middle">某某设备名称</div>
-            </div>
+            <div id="device-section"></div>
           </div>
           <div class="device-summing">
             <div class="summing-head margin-top"></div>
             <div class="summing-content">
-              <div class="save-line">2016年累计节约<span class="save-time">243小时</span>维修时间</div>
+              <div class="save-line">2016年累计节约<span class="save-time" ><span id="saveTime"></span>小时</span>维修时间</div>
               <div class="save-border"></div>
               <div class="device-status">设备正常运转</div>
               <div class="status-text">为保证患者生命质量提供最及时支持</div>
@@ -240,47 +182,8 @@
       <div class="swiper-slide device-diary">
         <div class="position-absolute">
           <div class="title">设备科的日记</div>
-          <div class="left-content">
-            <div class="year-box">2016.1.14</div>
-            <div class="border-line"></div>
-            <div class="diary-text">这一天是医工最忙碌的一天</div>
-            <div class="diary-text">
-              全天累计接修<span class="bold-text">26</span>次
-            </div>
-            <div class="border-line"></div>
-          </div>
-          <div class="right-content">
-            <div class="year-box">2016.1.14</div>
-            <div class="time-box">早上 06：19</div>
-            <div class="border-line"></div>
-            <div class="diary-text">
-              一天中最早的接修是<span class="bold-text">人觉非常君</span>医工完成
-            </div>
-            <div class="diary-text">
-              接修设备<span class="bold-text">人觉非常君</span>
-            </div>
-            <div class="border-line"></div>
-          </div>
-          <div class="left-content">
-            <div class="year-box">2016.1.14</div>
-            <div class="time-box">晚上 06：19</div>
-            <div class="border-line"></div>
-            <div class="diary-text">
-              一天中最晚的接修是<span class="bold-text">人觉非常君</span>医工完成
-            </div>
-            <div class="diary-text">
-              接修设备<span class="bold-text">人觉非常君</span>
-            </div>
-            <div class="border-line"></div>
-          </div>
-          <div class="right-content">
-            <div class="year-box">2016.1.14</div>
-            <div class="border-line"></div>
-            <div class="diary-text">是医工奔波最久的一天</div>
-            <div class="diary-text">
-              当天工作时长超过<span class="bold-text">14</span>小时
-            </div>
-            <div class="border-line"></div>
+          <div id="device-diary-html">
+
           </div>
           <div class="by-bottom">
             <div class="display-middle by-line"></div>
@@ -291,7 +194,7 @@
       <div class="swiper-slide star_worker">
         <div class="position-absolute">
           <div class="worker-content">
-            <div class="worker-line">
+<!--            <div class="worker-line">
               <div class="worker-img display-middle"></div>
               <div class="worker-con">
                 <div class="worker-title">
@@ -302,19 +205,6 @@
                 </div>
                 <div class="worker-name">医工姓名</div>
                 <div class="worker-describe">接修反应时长最短</div>
-              </div>
-            </div>
-            <div class="worker-line odd-line">
-              <div class="worker-img display-middle"></div>
-              <div class="worker-con">
-                <div class="worker-title">
-                <span class="arrow">
-                  <img src="images/worker_arrow.png" alt="">
-                </span>
-                  <span class="">闪电侠</span>
-                </div>
-                <div class="worker-name">医工姓名</div>
-                <div class="worker-describe">接修反应时长最短接修反应时长最短</div>
               </div>
             </div>
             <div class="worker-line">
@@ -329,7 +219,7 @@
                 <div class="worker-name">医工姓名</div>
                 <div class="worker-describe">接修反应时长最短</div>
               </div>
-            </div>
+            </div>-->
           </div>
           <div class="chapter-icon">
             <img src="images/worker_chapter.png" alt="">
@@ -376,36 +266,6 @@
           <div class="help-text qrcode-text work-email">
             工作邮箱:vip@shulianyixin.com
           </div>
-          <div class="by-bottom">
-            <div class="display-middle by-line"></div>
-            <div class="display-middle by-text">by 数联医信</div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide apply-form-slide">
-        <div class="position-absolute">
-          <form action="javascript:;">
-            <div class="slyx-log">
-              <img src="images/slyx_log.png" alt="">
-            </div>
-            <div class="apply-title">试用信息填写</div>
-            <div class="input-line">
-              <input type="text" placeholder="姓名" id="name" class="apply-input">
-            </div>
-            <div class="input-line">
-              <input type="text" placeholder="医院名称" id="hospital-name" class="apply-input">
-            </div>
-            <div class="input-line">
-              <input type="text" placeholder="职务" id="job" class="apply-input">
-            </div>
-            <div class="input-line">
-              <input type="text" placeholder="电话" id="phone" class="apply-input">
-            </div>
-            <div class="submit-box">
-              <button class="common-btn submit-btn">提交</button>
-            </div>
-            <div class="help-text">*关注公众号，即时了解云服信息</div>
-          </form>
           <div class="by-bottom">
             <div class="display-middle by-line"></div>
             <div class="display-middle by-text">by 数联医信</div>
@@ -471,11 +331,202 @@
       </div>
     </div>
   </div>
-  <div>
-    <audio src="gq/1.mp3" autoplay loop>
-      您的浏览器不支持 audio 标签。
-    </audio>
+  <div class="apply_success" style="display: block;" id="form-page">
+    <div class="apply_page">
+      <div class="position-absolute">
+        <form action="javascript:;" url="/ydh5/savetestinfo">
+          <div class="slyx-log">
+            <img src="images/slyx_log.png" alt="">
+          </div>
+          <div class="apply-title">试用信息填写</div>
+          <div class="input-line">
+            <input type="text" name="name" placeholder="姓名" id="name" class="apply-input">
+          </div>
+          <div class="input-line">
+            <input type="text" name="hosname" placeholder="医院名称" id="hospital-name" class="apply-input">
+          </div>
+          <div class="input-line">
+            <input name="title" type="text" placeholder="职务" id="job" class="apply-input">
+          </div>
+          <div class="input-line">
+            <input name="phone" type="text" placeholder="电话" id="phone" class="apply-input">
+          </div>
+          <div class="submit-box">
+            <button class="common-btn submit-btn">提交</button>
+          </div>
+          <div class="help-text">*关注公众号，即时了解云服信息</div>
+        </form>
+        <div class="by-bottom">
+          <div class="display-middle by-line"></div>
+          <div class="display-middle by-text">by 数联医信</div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div>
+<!--    <audio src="gq/1.mp3" autoplay loop>
+      您的浏览器不支持 audio 标签。
+    </audio>-->
+  </div>
+  <script type="text/html" id="time_axis_tpl">
+    <div class="axle-content axle-content1">
+      <div class="axle-time" ><%- recordTime %></div>
+      <div class="axle-title">
+        <span class="axle-bold"><%- recordDepartment %></span>录入了第一台设备
+      </div>
+      <div class="axle-name" ><%- recordEquipment %></div>
+    </div>
+    <div class="axle-content axle-content2">
+      <div class="axle-time"><%- repairTime %></div>
+      <div class="axle-title">
+        <span class="axle-bold"><%- repairDepartment %></span>报修了第一台设备
+      </div>
+      <div class="axle-name" ><%- recordEquipment %></div>
+    </div>
+    <div class="axle-content axle-content3">
+      <% if(screenTime) { %>
+        <div class="axle-time" ><%- screenTime %></div>
+        <div class="axle-name-owl">累计实时监测设备</div>
+        <div class="axle-name-owl">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
+      <% } else { %>
+        <div class="axle-time" ><%- completeTime %></div>
+        <div class="axle-title" >
+          <span class="axle-bold"><%- completeDepartment %></span>维修完成第一台设备
+        </div>
+        <div class="axle-name" ><%- completeEquipment %></div>
+      <% } %>
+    </div>
+  </script>
+  <script type="text/html" id="technical_top_tpl">
+    <div class="technical-name technical-name1"><%- repairDepartment1 %></div>
+    <div class="technical-name technical-name2"><%- repairDepartment2 %></div>
+    <div class="technical-name technical-name3"><%- repairDepartment3 %></div>
+  </script>
+  <script type="text/html" id="mac_text_tpl">
+    <% if(screenJudge) { %>
+    <div class="triunity-text" >“三位一体”</div>
+    <div class="tool-text">
+      <span class="display-middle">手机</span>
+      <span class="display-middle">+</span>
+      <span class="display-middle">web</span>
+      <span class="display-middle">+</span>
+      <span class="display-middle">大屏</span>
+    </div>
+    <% } else { %>
+    <div class="no-tool-text tool-text">
+      <span class="display-middle">手机</span>
+      <span class="display-middle">+</span>
+      <span class="display-middle">web</span>
+    </div>
+    <div class="no-triunity-text triunity-text">“随时随地的设备监测和管理”</div>
+    <% } %>
+
+  </script>
+  <script type="text/html" id="max_img_tpl">
+    <% if(screenJudge) { %>
+      <div class="mac_img yun_absolute"></div>
+    <% } else { %>
+      <div class="yun_absolute no_mac_img"></div>
+      <div class="yun_absolute no_mac_text"></div>
+    <% } %>
+  </script>
+  <script type="text/html" id="bottom_triunity_tpl">
+    <% if(screenJudge) { %>
+    <div class="mac_img yun_absolute"></div>
+    <div class="realize-text">您已实现医疗设备</div>
+    <div class="manage-text">“全面立体，实时监测”管理</div>
+    <% } else { %>
+    <div class="realize-text">立刻与MEMS申请数字大屏</div>
+    <div class="manage-text no-manage-text">
+      即可实现<span class="font-manage">“三位一体”</span>设备全息立体管理。
+    </div>
+    <% } %>
+
+  </script>
+  <script type="text/html" id="device_line_tpl">
+    <div class="device-section-line">
+      <div class="radius1">
+        <img src="images/radius1.png" alt="">
+      </div>
+      <div class="device-section-content display-middle"><%- useEquipment1 %></div>
+      <div class="device-section-content display-middle right"><%- repairDepartment1 %></div>
+    </div>
+    <div class="device-section-line section-line-color">
+      <div class="radius1">
+        <img src="images/radius2.png" alt="">
+      </div>
+      <div class="device-section-content display-middle"><%- useEquipment2 %></div>
+      <div class="device-section-content display-middle right"><%- repairDepartment2 %></div>
+    </div>
+    <div class="device-section-line section-line-color">
+      <div class="radius1">
+        <img src="images/radius3.png" alt="">
+      </div>
+      <div class="device-section-content display-middle"><%- useEquipment3 %></div>
+      <div class="device-section-content display-middle right"><%- repairDepartment3 %></div>
+    </div>
+  </script>
+  <script type="text/html" id="diary_text_tpl">
+    <div class="left-content">
+      <div class="year-box"><%- mostRepairDate %></div>
+      <div class="border-line"></div>
+      <div class="diary-text">这一天是医工最忙碌的一天</div>
+      <div class="diary-text">
+        全天累计接修<span class="bold-text"><%- mostRepairFrequency %></span>次
+      </div>
+      <div class="border-line"></div>
+    </div>
+    <div class="right-content">
+      <div class="year-box"><%- earliestRepairDate %></div>
+      <div class="time-box"><%- earliestRepairTime %></div>
+      <div class="border-line"></div>
+      <div class="diary-text">
+        一天中最早的接修是<span class="bold-text"><%- earliestRepairFix %></span>医工完成
+      </div>
+      <div class="diary-text">
+        接修设备<span class="bold-text"><%- earliestRepairEquipment %></span>
+      </div>
+      <div class="border-line"></div>
+    </div>
+    <div class="left-content">
+      <div class="year-box"><%- latestRepairDate %></div>
+      <div class="time-box"><%- latestRepairTime %></div>
+      <div class="border-line"></div>
+      <div class="diary-text">
+        一天中最晚的接修是<span class="bold-text"><%- latestRepairFix %></span>医工完成
+      </div>
+      <div class="diary-text">
+        接修设备<span class="bold-text"><%- latestRepairEquipment %></span>
+      </div>
+      <div class="border-line"></div>
+    </div>
+    <div class="right-content">
+      <div class="year-box"><%- longestRepairDate %></div>
+      <div class="border-line"></div>
+      <div class="diary-text"><span class="bold-text"><%- longestRepairFix %></span>创下一天内医工奔波最久时长</div>
+      <div class="diary-text">
+        当天工作时长超过<span class="bold-text"><%- longestRepairRange %></span>小时
+      </div>
+      <div class="border-line"></div>
+    </div>
+  </script>
+  <script type="text/html" id="worker_line_tpl">
+    <% _.each(worker_json, function(val, index){ %>
+      <div class="worker-line <% if(index % 2 === 1){ %>odd-line<% } %>">
+        <div class="worker-img display-middle worker-img<%- val.prize_index %>"></div>
+        <div class="worker-con">
+          <div class="worker-title">
+            <span class="arrow">
+              <img src="images/worker_arrow.png" alt="">
+            </span>
+            <span class=""><%- val.prize %></span>
+          </div>
+          <div class="worker-name"><%- val.fix %></div>
+          <div class="worker-describe"><%- val.description %></div>
+        </div>
+      </div>
+    <% }) %>
+  </script>
   <script type="text/javascript" src="jslib/jquery.min.js"></script>
   <script type="text/javascript" src="jslib/swiper.min.js"></script>
   <script type="text/javascript" src="jslib/underscore.js"></script>
