@@ -19,6 +19,40 @@ GVR.JSON.provinceJson = ['heilongjiang','jilin', 'liaoning', 'beijing', 'hebei',
   'guangdong', 'guangxi', 'hainan', 'fujian', 'hubei', 'hunan', 'jiangxi', 'gansu',
   'henan', 'ningxia', 'qinghai', 'shanxi', 'shanxi1', 'xinjiang', 'guizhou', 'sichuan',
   'xizang', 'yunnan','chongqing', 'tw', 'xianggang', 'aomen'];
+
+(function($) {
+  $.fn.form_json = function(){
+
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+      if (o[this.name]) {
+        if (!o[this.name].push) {
+          o[this.name] = [o[this.name]];
+        }
+        o[this.name].push(this.value || '');
+      } else {
+        o[this.name] = this.value || '';
+      }
+    });
+    return o;
+  };
+
+
+  $.fn.form_clear = function(){
+    var $all_input = this.find("input.clearable");
+    // 清除input框
+    $all_input.not("[type=checkbox], [type=radio]").val("");
+    // 清除checkbox和radio
+    $all_input.filter("[type=checkbox], [type=radio]").prop("checked", false);
+    //清除textarea和select
+    this.find("textarea.clearable").val("");
+    this.find("select.clearable option:selected").prop("selected",false);
+    return this;
+  };
+
+})(jQuery);
+
 var COMMON_FUNC = {
   ready_init: function() {
     var self = this;

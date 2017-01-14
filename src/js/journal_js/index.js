@@ -62,9 +62,8 @@ var index = {
     });
     var $init_url = $('#init-url');
     var url = '<%=base%>' + $init_url.attr('url');
-    COMMON_FUNC.ajax_get($init_url,{ hosid:18}, url, 'init_callback', function(result) {
+    COMMON_FUNC.ajax_get($init_url,{ hosid:7}, url, 'init_callback', function(result) {
       if (result.success) {
-        console.log(result.data);
         $('#hospitalName').text(result.data.hospitalName);
         var time_axis_tpl = self.time_axis_tpl(result.data);
         $('#time_tpl_html').html(time_axis_tpl);
@@ -114,12 +113,107 @@ var index = {
         ];
         var worker_line_tpl = self.worker_line_tpl({worker_json: worker_json});
         $('.worker-content').html(worker_line_tpl);
+        var mySwiper = new Swiper('.swiper-container', {
+          direction : 'vertical',
+          onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+          },
+          onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            console.log(swiper.activeIndex);
+            switch (swiper.activeIndex) {
+              case 1:
+                self.time_axle_animate();
+                break;
+              case 2:
+                self.standing_book();
+                self.hide_chapter('technical-chapter');
+                break;
+              case 3:
+                self.chapter_animate('technical-chapter');
+                break;
+              case 4:
+                self.hide_chapter('technical-chapter');
+                break;
+              default :
+                break;
+            }
+          }
+        });
       }
     });
-    var mySwiper = new Swiper('.swiper-container', {
-      direction : 'vertical',
-      loop: false
+  },
+
+  time_axle_animate: function() {
+    var $min_radius_line = $('.min-radius-line');
+    $min_radius_line.css({
+      transition: 'height 0s',
+      width:0
     });
+    setTimeout(function() {
+      $min_radius_line.css({
+        transition: 'width 2s'
+      });
+      $('.min-radius-line1').css({
+        width: '50%'
+      });
+      $('.min-radius-line2').css({
+        width: '47%'
+      });
+    },4000);
+  },
+
+  standing_book: function() {
+    $('.toop-outer-img').css({
+      transition: 'opacity 0s',
+      opacity: 0
+    });
+    $('.toop-inside-img').css({
+      transition: 'opacity 0s',
+      opacity: 0
+    });
+    setTimeout(function() {
+      _(16).times(function(n){
+        setTimeout(function() {
+          $('.toop-inside-img'+ (n+1)).css({
+            transition: 'opacity 0.2s',
+            opacity: 1
+          });
+        }, 60 *n);
+        setTimeout(function() {
+          $('.toop-outer-img'+ (n+1)).css({
+            transition: 'opacity 0.2s',
+            opacity: 1
+          });
+        }, 80 *n);
+      });
+    }, 500);
+  },
+
+  chapter_animate: function(class_name) {
+    var $chapter = $('.'+ class_name);
+    setTimeout(function(){
+      if (class_name === 'technical-chapter') {
+        $chapter.css({
+          top:'7rem',
+          right:'3rem',
+          width:'9rem',
+          opacity: 1
+        })
+      }
+
+    }, 2800)
+  },
+
+  hide_chapter: function(class_name) {
+    var $chapter = $('.'+ class_name);
+    $chapter.css({
+      top:'100%',
+      right:'100%',
+      width:'100%',
+      opacity: 0
+    })
   },
 
   input_focus: function($obj) {
@@ -140,15 +234,32 @@ var index = {
   },
 
   my_share: function() {
-    $('#prompt_back').css('display', 'block');
+    $('#prompt_back').css({
+      display:'block',
+      'opacity': 1
+    });
   },
 
   prompt_back: function() {
-    $('#prompt_back').css('display', 'none');
+    $('#prompt_back').css({
+      display:'none',
+      'opacity': '0'
+    });
   },
 
   apply_btn: function() {
-    
+    $('#form-page').css('display', 'block');
+  },
+
+  back_icon: function() {
+    var $form_page = $('#form-page');
+    $form_page.css('display', 'none');
+    var $form = $form_page.find('form');
+    $form.form_clear();
+  },
+
+  music_icon: function($obj) {
+    $obj.toggleClass('start');
   }
 };
 
@@ -165,4 +276,9 @@ $(function(){
   index.prompt_back();
 }).on('click', '#apply-btn', function() {
   index.apply_btn();
-});
+}).on('click', '#back-icon', function() {
+  index.back_icon();
+}).on('click', '.music-icon', function() {
+  index.music_icon($(this));
+})
+;

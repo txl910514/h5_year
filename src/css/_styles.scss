@@ -40,6 +40,7 @@ html {
      top: 7rem;
      transform: rotate(15deg);
      z-index: 3;
+     transition: all 2s;
    }
    .slyx-log {
      margin: auto;
@@ -75,6 +76,27 @@ html {
        font-weight: bold;
      }
    }
+   .music-icon {
+     position: absolute;
+     top: 1.7em;
+     right: 0.5rem;
+     width: 2.8rem;
+     z-index: 99;
+     &.start {
+       animation: radius 2s infinite;
+     }
+   }
+   .bottom-arrow {
+     width: 2.5rem;
+     position: absolute;
+     bottom: 1.7em;
+     left: 50%;
+     margin-left:-1.5rem;
+     z-index: 9;
+     &.bottom-start {
+       animation: bottom_margin 2s infinite;
+     }
+   }
    .apply_success {
      display: none;
      position: absolute;
@@ -88,6 +110,13 @@ html {
      padding: 0 1rem;
      box-sizing: border-box;
      &#form-page {
+       .back-icon {
+         width: 4rem;
+         position: absolute;
+         left: 0.2rem;
+         top: 1.7rem;
+         z-index: 9;
+       }
        .apply_page {
          overflow: hidden;
          .position-absolute {
@@ -305,6 +334,8 @@ html {
                  left: 0;
                  background: url(../images/toop-outer-img.png) no-repeat;
                  background-size: contain;
+                 opacity: 0;
+                 transition: opacity 2s;
                }
                .toop-inside-img  {
                  width: 94%;
@@ -316,6 +347,8 @@ html {
                  margin-left: -47%;
                  background: url(../images/toop-inside-img.png) no-repeat;
                  background-size: contain;
+                 opacity: 0;
+                 transition: opacity 0.2s;
                }
              }
              .standing-exact {
@@ -581,7 +614,7 @@ html {
            background: url(../images/time_radius1.png) no-repeat;
            background-size: contain;
            background-position: center;
-/*           animation: radius 2s infinite;*/
+ /*          animation: radius 2s infinite;*/
          }
          .radius_2 {
            width: 70%;
@@ -597,7 +630,7 @@ html {
            bottom: 0;
            opacity: 0.2;
            margin-top: 5%;
- /*          animation: radius 2s infinite;*/
+/*           animation: radius 2s infinite;*/
          }
          .radius_3 {
            position: absolute;
@@ -610,7 +643,7 @@ html {
            background: url(../images/time_radius3.png) no-repeat;
            background-size: contain;
            background-position: center;
- /*          animation: radius 2s infinite;*/
+/*           animation: radius 2s infinite;*/
            opacity: 0.2;
          }
          .radius_4 {
@@ -649,12 +682,10 @@ html {
            position: absolute;
            transform-origin: 0% 0%;
            z-index: 0;
-           transition: width 2s;
            top: 50%;
            left: 50%;
             &.min-radius-line1 {
               width: 50%;
-
               margin-left: -33%;
               margin-top: -36%;
               transform: rotate(54deg);
@@ -1022,12 +1053,16 @@ html {
    .prompt_back {
      position: absolute;
      top: 0;
-     left: 0;
+     left: 0%;
      right: 0;
      bottom: 0;
      background-color: $rgba2;
      z-index: 10;
+     width: 100%;
+     height: 100%;
      display: none;
+     opacity: 0;
+     transition: opacity 2s;
      .hint_line {
        height: 45%;
        background: url(../images/hint_line.png) no-repeat;
@@ -1092,7 +1127,7 @@ html {
   }
 }
 
-@keyframes radius_line {
+@keyframes anticlockwise_radius {
   0% {
     transform: rotate(0deg);
   }
@@ -1100,7 +1135,24 @@ html {
     transform: rotate(360deg);
   }
 }
-
+@keyframes bottom_margin {
+  0% {
+    margin-bottom: -0.5rem;
+    opacity: 1;
+  }
+  30% {
+    margin-top: 1.2rem;
+    opacity: 0.2;
+  }
+  60% {
+    margin-bottom: 0.7rem;
+    opacity: 0.7;
+  }
+  100% {
+    margin-top: 0.7rem;
+    opacity: 0.5;
+  }
+}
 @media screen and (min-width:319px) and (max-width:359px){
   html{
     body {

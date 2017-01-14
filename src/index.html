@@ -7,6 +7,7 @@
   <meta name="renderer" content="webkit">
   <title></title>
   <link rel="stylesheet" href="css/css_lib/swiper.css">
+  <link rel="stylesheet" href="css/css_lib/animate.min.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -27,31 +28,31 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide home_page">
         <div class="position-absolute">
-          <div class="home-time">2016</div>
-          <div class="home-report">年度报告</div>
-          <div class="home-name" id="hospitalName"></div>
-          <div class="home-theme">[ 设备篇 ]</div>
-          <div class="bottom_slyx_log">
-            <img src="images/slyx_log.png" alt="">
+          <div class="home-time ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">2016</div>
+          <div class="home-report ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s">年度报告</div>
+          <div class="home-name ani" id="hospitalName" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"></div>
+          <div class="home-theme ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2.5s">[ 设备篇 ]</div>
+          <div class="bottom_slyx_log" >
+            <img src="images/slyx_log.png" class="ani" alt="" swiper-animate-effect="zoomInUp" swiper-animate-duration="1s" swiper-animate-delay="3s">
           </div>
-          <div class="home-back"></div>
-          <div class="home-line"></div>
+          <div class="home-back ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s"></div>
+          <div class="home-line ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.5s"></div>
         </div>
       </div>
       <div class="swiper-slide time-axle">
         <div class="position-absolute">
-          <div class="time-icon">
+          <div class="time-icon ani" swiper-animate-effect="slideInDown" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
             <img src="images/time-icon.png" alt="">
           </div>
-          <div class="radius_1"></div>
-          <div class="radius_2"></div>
-          <div class="radius_3"></div>
-          <div class="radius_4"></div>
-          <div class="min-radius-1 min-radius"></div>
-          <div class="min-radius-2 min-radius"></div>
-          <div class="min-radius-3 min-radius"></div>
-          <div class="min-radius-line min-radius-line1"></div>
-          <div class="min-radius-line min-radius-line2"></div>
+          <div class="radius_1 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+          <div class="radius_2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+          <div class="radius_3 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+          <div class="radius_4 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+          <div class="min-radius-1 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="1s"></div>
+          <div class="min-radius-2 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="2s"></div>
+          <div class="min-radius-3 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="3s"></div>
+          <div class="min-radius-line min-radius-line1" style="width: 0"></div>
+          <div class="min-radius-line min-radius-line2" style="width: 0"></div>
           <div id="time_tpl_html">
 
           </div>
@@ -65,13 +66,13 @@
         <div class="position-absolute">
           <div class="standing-content">
             <div class="standing-content">
-              <div class="standing-value">
+              <div class="standing-value ani" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
                 您通过医信云服完成了<span class="standing-bold" id="numberEquipment"></span>台设备盘点,估值达
                 <span class="standing-bold" id="valueEquipment"></span>
               </div>
               <div class="hoop-content">
                 <div class="hoop-box">
-                  <div class="table hoop-value-text">
+                  <div class="table hoop-value-text ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
                     <div class="table-cell">100%</div>
                   </div>
                   @@include('./toop_outer.html', {
@@ -83,18 +84,18 @@
                   "nav":"inside"
                   })
                 </div>
-                <div class="standing-exact">
+                <div class="standing-exact ani" swiper-animate-effect="rotateInUpRight" swiper-animate-duration="0.3s" swiper-animate-delay="1s">
                   <span class="exact-text">台帐</span> 准确率
                 </div>
               </div>
-              <div class="standing-value standing-value2">
+              <div class="standing-value standing-value2 ani" swiper-animate-effect="rotateInUpRight" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
                 其中<span class="standing-bold">Ⅱ、Ⅲ类医疗器械</span>云台帐准确率提升至<span class="standing-bold">100%</span>,
                 高于行业平均水平。
               </div>
-              <div class="standing-detail-img">
+              <div class="standing-detail-img ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="1.5s">
                 <img src="images/standing-detail-img.png" alt="">
               </div>
-              <div class="cogradient-text">多科室 同步盘点</div>
+              <div class="cogradient-text ani" swiper-animate-effect="wobble" swiper-animate-duration="0.5s" swiper-animate-delay="2s">多科室 同步盘点</div>
             </div>
           </div>
           <div class="by-bottom">
@@ -105,17 +106,17 @@
       </div>
       <div class="swiper-slide technical-ranking">
         <div class="position-absolute">
-          <div class="technical-alert">设备关注度最高,反应最快</div>
-          <div class="top-ranking">TOP 3 科室</div>
+          <div class="technical-alert ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">设备关注度最高,反应最快</div>
+          <div class="top-ranking ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0s">TOP 3 科室</div>
           <div class="cup-box">
-            <div class="cup-tower"></div>
-            <div class="cup-bar"></div>
-            <div class="award1 award-icon"></div>
-            <div class="award2 award-icon"></div>
-            <div class="award3 award-icon"></div>
-            <div class="technical-num technical-num1">1</div>
-            <div class="technical-num technical-num2">2</div>
-            <div class="technical-num technical-num3">3</div>
+            <div class="cup-tower ani" swiper-animate-effect="slideInUp" swiper-animate-duration="0.3s" swiper-animate-delay="0.5s"></div>
+            <div class="cup-bar ani" swiper-animate-effect="slideInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.8s"></div>
+            <div class="award1 award-icon ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.4s"></div>
+            <div class="award2 award-icon ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.2s"></div>
+            <div class="award3 award-icon ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2s"></div>
+            <div class="technical-num technical-num1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.2s" swiper-animate-delay="1.8s">1</div>
+            <div class="technical-num technical-num2 ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="0.2s" swiper-animate-delay="1.6s">2</div>
+            <div class="technical-num technical-num3 ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.2s" swiper-animate-delay="1.4s">3</div>
             <div id="technical_tpl_html"></div>
           </div>
           <div class="technical-chapter chapter-icon">
@@ -332,6 +333,9 @@
     </div>
   </div>
   <div class="apply_success" style="display: none;" id="form-page">
+    <div class="back-icon" id="back-icon">
+      <img src="images/back_icon.png" alt="">
+    </div>
     <div class="apply_page">
       <div class="position-absolute">
         <form action="javascript:;" url="/ydh5/savetestinfo" id="apply_form">
@@ -340,16 +344,16 @@
           </div>
           <div class="apply-title">试用信息填写</div>
           <div class="input-line">
-            <input type="text" name="name" placeholder="姓名" id="name" class="apply-input">
+            <input type="text" name="name" placeholder="姓名" id="name" class="apply-input clearable">
           </div>
           <div class="input-line">
-            <input type="text" name="hosname" placeholder="医院名称" id="hospital-name" class="apply-input">
+            <input type="text" name="hosname" placeholder="医院名称" id="hospital-name" class="apply-input clearable">
           </div>
           <div class="input-line">
-            <input name="title" type="text" placeholder="职务" id="job" class="apply-input">
+            <input name="title" type="text" placeholder="职务" id="job" class="apply-input clearable">
           </div>
           <div class="input-line">
-            <input name="phone" type="text" placeholder="电话" id="phone" class="apply-input">
+            <input name="phone" type="text" placeholder="电话" id="phone" class="apply-input clearable">
           </div>
           <div class="submit-box">
             <button class="common-btn submit-btn">提交</button>
@@ -368,39 +372,45 @@
       您的浏览器不支持 audio 标签。
     </audio>-->
   </div>
+  <div class="music-icon start">
+    <img src="images/start_music.png" alt="">
+  </div>
+  <div class="bottom-arrow bottom-start">
+    <img src="images/bottom_arrow.png" alt="">
+  </div>
   <script type="text/html" id="time_axis_tpl">
     <div class="axle-content axle-content1">
-      <div class="axle-time" ><%- recordTime %></div>
-      <div class="axle-title">
-        <span class="axle-bold"><%- recordDepartment %></span>录入了第一台设备
+      <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="1.2s"><%- recordTime %></div>
+      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="1.4s">
+        <span class="axle-bold" ><%- recordDepartment %></span>录入了第一台设备
       </div>
-      <div class="axle-name" ><%- recordEquipment %></div>
+      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="1.6s"><%- recordEquipment %></div>
     </div>
     <div class="axle-content axle-content2">
-      <div class="axle-time"><%- repairTime %></div>
-      <div class="axle-title">
+      <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="2.2s"><%- repairTime %></div>
+      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="2.4s">
         <span class="axle-bold"><%- repairDepartment %></span>报修了第一台设备
       </div>
-      <div class="axle-name" ><%- recordEquipment %></div>
+      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="2.6s" ><%- recordEquipment %></div>
     </div>
     <div class="axle-content axle-content3">
       <% if(screenTime) { %>
-        <div class="axle-time" ><%- screenTime %></div>
-        <div class="axle-name-owl">累计实时监测设备</div>
-        <div class="axle-name-owl">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
+        <div class="axle-time ani"  swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="3.2s"><%- screenTime %></div>
+        <div class="axle-name-owl ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="3.4s">累计实时监测设备</div>
+        <div class="axle-name-owl ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="3.6s">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
       <% } else { %>
-        <div class="axle-time" ><%- completeTime %></div>
-        <div class="axle-title" >
+        <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="3.2s"><%- completeTime %></div>
+        <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="3.4s">
           <span class="axle-bold"><%- completeDepartment %></span>维修完成第一台设备
         </div>
-        <div class="axle-name" ><%- completeEquipment %></div>
+        <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="3.6s"><%- completeEquipment %></div>
       <% } %>
     </div>
   </script>
   <script type="text/html" id="technical_top_tpl">
-    <div class="technical-name technical-name1"><%- repairDepartment1 %></div>
-    <div class="technical-name technical-name2"><%- repairDepartment2 %></div>
-    <div class="technical-name technical-name3"><%- repairDepartment3 %></div>
+    <div class="technical-name technical-name1 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="2.5s"><%- repairDepartment1 %></div>
+    <div class="technical-name technical-name2 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="2.3s"><%- repairDepartment2 %></div>
+    <div class="technical-name technical-name3 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="2.1s"><%- repairDepartment3 %></div>
   </script>
   <script type="text/html" id="mac_text_tpl">
     <% if(screenJudge) { %>
@@ -530,6 +540,7 @@
   <script type="text/javascript" src="jslib/jquery.min.js"></script>
   <script type="text/javascript" src="jslib/swiper.min.js"></script>
   <script type="text/javascript" src="jslib/underscore.js"></script>
+  <script type="text/javascript" src="jslib/swiper.animate1.0.2.min.js"></script>
   <script type="text/javascript" src="journal_js/common.js"></script>
   <script type="text/javascript" src="journal_js/index.js"></script>
 </body>
