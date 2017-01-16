@@ -17,7 +17,7 @@
   <script type="text/javascript">
     GVR = {
       URL: {},
-      ECHARTS: {},
+      SWIPER: {},
       JSON: {},
       INTERVAL: {}
     };
@@ -44,9 +44,9 @@
           <div class="time-icon ani" swiper-animate-effect="slideInDown" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
             <img src="images/time-icon.png" alt="">
           </div>
-          <div class="radius_1 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-          <div class="radius_2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-          <div class="radius_3 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+          <div class="radius_animate radius_1 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+          <div class="radius_animate radius_2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+          <div class="radius_animate radius_3 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
           <div class="radius_4 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
           <div class="min-radius-1 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="1s"></div>
           <div class="min-radius-2 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="2s"></div>
@@ -213,34 +213,34 @@
             <img src="images/slyx_log.png" alt="">
           </div>
           <div class="qrcode-box">
-            <div class="alert-top-left"></div>
-            <div class="alert-top-right"></div>
-            <div class="alert-bottom-left"></div>
-            <div class="alert-bottom-right"></div>
-            <img src="images/ewm.png" alt="">
+            <div class="alert-top-left ani" swiper-animate-effect="shake" swiper-animate-duration="0.3s" swiper-animate-delay="0.7s"></div>
+            <div class="alert-top-right ani" swiper-animate-effect="shake" swiper-animate-duration="0.3s" swiper-animate-delay="0.7s"></div>
+            <div class="alert-bottom-left ani" swiper-animate-effect="shake" swiper-animate-duration="0.3s" swiper-animate-delay="0.7s"></div>
+            <div class="alert-bottom-right ani" swiper-animate-effect="shake" swiper-animate-duration="0.3s" swiper-animate-delay="0.7s"></div>
+            <img src="images/ewm.png" alt="" class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
           </div>
-          <div class="help-text qrcode-text">*长按二维码，关注医信云服</div>
-          <div class="thanks-text">
+          <div class="help-text qrcode-text ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="1s">*长按二维码，关注医信云服</div>
+          <div class="thanks-text ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
             目前数联医信已覆盖<span class="">19</span>个省份，
           </div>
-          <div class="thanks-text">
+          <div class="thanks-text ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
             服务<span class="">三百</span>余家客户。
           </div>
-          <div class="thanks-text">
+          <div class="thanks-text ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
             2016感谢有您。</div>
-          <button class="apply-btn share-btn common-btn" id="apply-btn">
+          <button class="apply_yxyf apply-btn share-btn common-btn ani" id="apply-btn" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
             申请试用<span class="yxyf">医信云服</span>
           </button>
           <div class="reset-share-box">
-            <button class="share-btn common-btn display-middle reset-btn">重播</button>
-            <button class="share-btn common-btn display-middle my-share">
+            <button class="share-btn common-btn display-middle reset-btn again_play ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s">重播</button>
+            <button class="share-btn common-btn display-middle my-share ani" id="my-share" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
               <i class="share-icon display-middle">
                 <img src="images/share-icon.png" alt="">
               </i>
               <span class="display-middle">我要分享</span>
             </button>
           </div>
-          <div class="help-text qrcode-text work-email">
+          <div class="help-text qrcode-text work-email ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">
             工作邮箱:vip@shulianyixin.com
           </div>
           <div class="by-bottom">
@@ -250,7 +250,7 @@
         </div>
       </div>
     </div>
-    <div class="apply_success">
+    <div class="apply_success" id="apply_success">
       <div class="apply_page ">
         <div class="position-absolute">
           <div class="slyx-log qrcode-slyx-log success_alert">
@@ -277,7 +277,7 @@
             2016感谢有您。
           </div>
           <div class="reset-share-box success-reset">
-            <button class="share-btn common-btn display-middle reset-btn">重播</button>
+            <button class="share-btn common-btn display-middle reset-btn again_play" >重播</button>
             <button class="share-btn common-btn display-middle my-share">
               <i class="share-icon display-middle">
                 <img src="images/share-icon.png" alt="">
@@ -323,10 +323,10 @@
             <input type="text" name="name" placeholder="姓名" id="name" class="apply-input clearable">
           </div>
           <div class="input-line">
-            <input type="text" name="hosname" placeholder="医院名称" id="hospital-name" class="apply-input clearable">
+            <input type="text" name="hospital" placeholder="医院名称" id="hospital-name" class="apply-input clearable">
           </div>
           <div class="input-line">
-            <input name="title" type="text" placeholder="职务" id="job" class="apply-input clearable">
+            <input name="jop" type="text" placeholder="职务" id="job" class="apply-input clearable">
           </div>
           <div class="input-line">
             <input name="phone" type="text" placeholder="电话" id="phone" class="apply-input clearable">
@@ -344,15 +344,22 @@
     </div>
   </div>
   <div>
-<!--    <audio src="gq/1.mp3" autoplay loop>
+    <audio src="gq/1.mp3" autoplay loop id="audio">
       您的浏览器不支持 audio 标签。
-    </audio>-->
+    </audio>
   </div>
   <div class="music-icon start">
     <img src="images/start_music.png" alt="">
   </div>
-  <div class="bottom-arrow bottom-start">
+  <div class="bottom-arrow">
     <img src="images/bottom_arrow.png" alt="">
+  </div>
+  <div class="parameter_error">
+    <div class="table">
+      <div class="table-cell">
+        参数错误
+      </div>
+    </div>
   </div>
   <script type="text/html" id="time_axis_tpl">
     <div class="axle-content axle-content1">

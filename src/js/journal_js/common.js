@@ -56,29 +56,23 @@ GVR.JSON.provinceJson = ['heilongjiang','jilin', 'liaoning', 'beijing', 'hebei',
 var COMMON_FUNC = {
   ready_init: function() {
     var self = this;
-    self.get_time();
   },
 
-  get_time: function() {
-    function getTime_func() {
-      var time_text;
-      var local_time = new Date();
-      var hour = local_time.getHours();
-      var min = local_time.getMinutes();
-      var year = local_time.getFullYear();
-      var month = local_time.getMonth()+1;
-      var date = local_time.getDate();
-      hour = hour < 10 ? '0' + hour : hour;
-      min = min < 10 ? '0' + min : min;
-      month = month < 10 ? '0' + month : month;
-      date = date < 10 ? '0' + date : date;
-      time_text = year + '年' + month + '月' + date + '日';
-      $('#js-hour-text').text(hour);
-      $('#js-min-text').text(min);
-      $('#js-year-text').text(time_text);
-      setTimeout(getTime_func, 1000);
-    }
-    getTime_func();
+  search_location: function(key) {
+    return decodeURI(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+  },
+
+  alert_info: function(message) {
+    var $alert_info = $('<div class="alert_info">'+message +'</div>');
+    $('body').append($alert_info);
+    $alert_info.css({
+      bottom:'5rem',
+      opacity:1,
+      'margin-left': -$alert_info.width() / 2 + 'px'
+    });
+    setTimeout(function() {
+      $alert_info.remove();
+    },2000);
   },
 
   ajax_get: function($obj, data, url, jsonp_name, error_callback, callback){
@@ -125,26 +119,13 @@ var COMMON_FUNC = {
         jsonp: 'callback',
         jsonpCallback:jsonp_name,
         success: function(result){
-          if(result.msg){
-            console.log(result.msg);
+          if(!result.success){
+            self.alert_info(result.message);
           }
           $obj.removeClass('disabled');
           if(_.isFunction(callback)){
             callback(result);
           }
-          if(result.reload === 1){
-            self._reload();
-          }
-          else if(result.reload === 2){
-            self.reload();
-          }
-          else if(result.reload === 3){
-            self._reload(0);
-          }
-          else if(result.redirect){
-            self.redirect(result.redirect);
-          }
-/*          self.full_loading("hide");*/
         },
         error: function(xhr, msg, error){
           if(msg === "error"){

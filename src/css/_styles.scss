@@ -20,8 +20,38 @@ html {
      display: inline-block;
      vertical-align: middle;
    }
+   .parameter_error {
+     position: absolute;
+     top:0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: $color12;
+     color: $color4;
+     z-index: 999;
+     display: none;
+     .table {
+       text-align: center;
+       height: 100%;
+       width: 100%;
+       font-size: 1.8rem;
+     }
+   }
    img {
      max-width: 100%;
+   }
+   .alert_info {
+     position: absolute;
+     padding:1rem;
+     background: $rgba2;
+     bottom: 3rem;
+     opacity: 1;
+     color: $color4;
+     border-radius: $radius5;
+     text-align: center;
+     left: 50%;
+     z-index: 999;
+     transition: bottom 1s;
    }
    .table {
      display: table;
@@ -71,6 +101,10 @@ html {
      background: $rgba5;
      outline: none;
      -webkit-tap-highlight-color: transparent;
+     &.apply_yxyf {
+       background: $color1;
+       color: #fff;
+     }
      .yxyf {
        font-size: 2rem;
        font-weight: bold;
@@ -93,6 +127,8 @@ html {
      left: 50%;
      margin-left:-1.5rem;
      z-index: 9;
+     opacity: 0;
+     transition: opacity 1s;
      &.bottom-start {
        animation: bottom_margin 2s infinite;
      }
@@ -152,6 +188,7 @@ html {
                height: 100%;
                width: 100%;
                font-size: 1.8rem;
+               outline: none;
              }
            }
            .submit-box {
@@ -281,6 +318,9 @@ html {
          }
          &.apply-btn {
            margin-top: 1.3rem;
+         }
+         &.share-ani {
+           animation: share_ani 2s infinite !important;
          }
        }
        .reset-share-box {
@@ -614,7 +654,9 @@ html {
            background: url(../images/time_radius1.png) no-repeat;
            background-size: contain;
            background-position: center;
- /*          animation: radius 2s infinite;*/
+           &.time_radius_animation {
+             animation: radius 1.5s infinite !important;
+           }
          }
          .radius_2 {
            width: 70%;
@@ -630,7 +672,9 @@ html {
            bottom: 0;
            opacity: 0.2;
            margin-top: 5%;
-/*           animation: radius 2s infinite;*/
+           &.time_radius_animation {
+             animation: radius 1.5s infinite !important;
+           }
          }
          .radius_3 {
            position: absolute;
@@ -643,8 +687,10 @@ html {
            background: url(../images/time_radius3.png) no-repeat;
            background-size: contain;
            background-position: center;
-/*           animation: radius 2s infinite;*/
            opacity: 0.2;
+           &.time_radius_animation {
+             animation: radius 1.5s infinite !important;
+           }
          }
          .radius_4 {
            position: absolute;
@@ -1153,6 +1199,17 @@ html {
     opacity: 0.5;
   }
 }
+
+@keyframes share_ani {
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @media screen and (min-width:319px) and (max-width:359px){
   html{
     body {

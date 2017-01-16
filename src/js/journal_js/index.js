@@ -11,7 +11,11 @@ var index = {
   diary_text_tpl: _.template($('#diary_text_tpl').html()),
   worker_line_tpl: _.template($('#worker_line_tpl').html()),
   ready_init:function() {
-/*    alert(window.screen.width);*/
+    var search_value = COMMON_FUNC.search_location('hospital_id');
+    if(!search_value) {
+      $('.parameter_error').css('display','block');
+      return false;
+    }
     var self = this;
     var screen_height = $(document).height();
     var one_scale = 315/500;
@@ -62,7 +66,7 @@ var index = {
     });
     var $init_url = $('#init-url');
     var url = '<%=base%>' + $init_url.attr('url');
-    COMMON_FUNC.ajax_get($init_url,{ hosid:18}, url, 'init_callback', function(result) {
+    COMMON_FUNC.ajax_get($init_url,{ hosid:search_value}, url, 'init_callback', function(result) {
       if (result.success) {
         $('#hospitalName').text(result.data.hospitalName);
         var time_axis_tpl = self.time_axis_tpl(result.data);
@@ -113,22 +117,34 @@ var index = {
         ];
         var worker_line_tpl = self.worker_line_tpl({worker_json: worker_json});
         $('.worker-content').html(worker_line_tpl);
-        var mySwiper = new Swiper('.swiper-container', {
+        GVR.SWIPER.mySwiper = new Swiper('.swiper-container', {
           direction : 'vertical',
           onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
             swiperAnimateCache(swiper); //隐藏动画元素
             swiperAnimate(swiper); //初始化完成开始动画
+            switch (swiper.activeIndex) {
+              case 0:
+                self.home_animate();
+                break;
+              default :
+                break;
+            }
           },
           onSlideChangeEnd: function(swiper){
             swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-            console.log(swiper.activeIndex);
             switch (swiper.activeIndex) {
+              case 0:
+                self.hide_home();
+                self.home_animate();
+                self.hide_time();
+                break;
               case 1:
                 self.time_axle_animate();
                 break;
               case 2:
                 self.standing_book();
                 self.hide_chapter('technical-chapter');
+                self.hide_time();
                 break;
               case 3:
                 self.chapter_animate('technical-chapter');
@@ -141,9 +157,11 @@ var index = {
                 break;
               case 7:
                 self.chapter_animate('diary-chapter');
+                self.hide_share();
                 break;
               case 8:
                 self.hide_chapter('diary-chapter');
+                self.share_animate();
                 break;
               default :
                 break;
@@ -154,15 +172,57 @@ var index = {
     });
   },
 
-  time_axle_animate: function() {
-    var $min_radius_line = $('.min-radius-line');
-    $min_radius_line.css({
-      transition: 'height 0s',
-      width:0
+  home_animate: function() {
+    var $bottom_arrow = $('.bottom-arrow');
+    setTimeout(function() {
+      $bottom_arrow.css({
+        opacity:1
+      });
+      $bottom_arrow.addClass('bottom-start');
+    }, 4000);
+  },
+
+  share_animate: function() {
+    var num = 1;
+    $('#my-share').attr('swiper-animate-effect', 'zoomIn');
+    if (GVR.INTERVAL.share_animate) {
+      clearInterval(GVR.INTERVAL.share_animate);
+    }
+    setTimeout(function() {
+      GVR.INTERVAL.share_animate = setInterval(function() {
+        $('#my-share').toggleClass('share-ani');
+        if(!$('#my-share').hasClass('share-ani')) {
+          $('#my-share').removeClass('bounceInRight');
+        }
+      }, num*2000);
+    }, 2500)
+  },
+
+  hide_share: function() {
+    if (GVR.INTERVAL.share_animate) {
+      clearInterval(GVR.INTERVAL.share_animate);
+    }
+    $('#my-share').removeClass('zoomIn');
+    $('#my-share').attr('swiper-animate-effect', 'bounceInRight');
+    $('.my-share').removeClass('share-ani');
+  },
+
+  hide_home: function() {
+    var $bottom_arrow = $('.bottom-arrow');
+    $bottom_arrow.removeClass('bottom-start');
+    $bottom_arrow.css({
+      opacity:0
     });
+  },
+
+  time_axle_animate: function() {
+    setTimeout(function() {
+      $('.radius_animate').addClass('time_radius_animation');
+    }, 800);
+    var $min_radius_line = $('.min-radius-line');
     setTimeout(function() {
       $min_radius_line.css({
-        transition: 'width 2s'
+        transition: 'width 1s'
       });
       $('.min-radius-line1').css({
         width: '50%'
@@ -171,6 +231,15 @@ var index = {
         width: '47%'
       });
     },4000);
+  },
+
+  hide_time: function() {
+    $('.radius_animate').removeClass('time_radius_animation');
+    var $min_radius_line = $('.min-radius-line');
+    $min_radius_line.css({
+      transition: 'height 0s',
+      width:0
+    });
   },
 
   standing_book: function() {
@@ -243,10 +312,15 @@ var index = {
   },
 
   apply_form: function($form) {
+    var self = this;
     var data = $form.serialize();
     var url = '<%=base%>' + $form.attr('url');
     COMMON_FUNC.ajax_get($form, data, url, 'form_callback', function(result){
-
+      if(result.success) {
+        self.back_icon();
+        $('.music-icon').css('display', 'none');
+        $('#apply_success').css('display', 'block');
+      }
     });
   },
 
@@ -277,6 +351,24 @@ var index = {
 
   music_icon: function($obj) {
     $obj.toggleClass('start');
+    var $audio = $('#audio').get(0);
+    if($audio.paused){
+      $audio.play();
+      $obj.find('img').attr('src', 'images/start_music.png');
+    }else{
+      $audio.pause();
+      $obj.find('img').attr('src', 'images/no_music.png');
+    }
+  },
+
+  again_play: function() {
+    var $audio = $('#audio').get(0);
+    var $music_icon = $('.music-icon');
+    $music_icon.addClass('start');
+    $audio.load();
+    $music_icon.find('img').attr('src', 'images/start_music.png');
+    $('#apply_success').css('display','none');
+    GVR.SWIPER.mySwiper.slideTo(0, 1000, true);
   }
 };
 
@@ -297,5 +389,7 @@ $(function(){
   index.back_icon();
 }).on('click', '.music-icon', function() {
   index.music_icon($(this));
+}).on('click', '.again_play', function() {
+  index.again_play();
 })
 ;
