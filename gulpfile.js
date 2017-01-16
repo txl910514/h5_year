@@ -28,7 +28,7 @@ var gulp = require('gulp'),
 	Q = require('q'),
 	del = require('del'),
 	pathConfig = {
-		dist: 'h5_year/',
+		dist: 'year_report/',
 		src: 'src/',
 		rev: 'rev'
 	},
