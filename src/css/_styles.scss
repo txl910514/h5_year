@@ -40,7 +40,7 @@ html {
      top: 7rem;
      transform: rotate(15deg);
      z-index: 3;
-     transition: all 2s;
+     transition: all 0.15s;
    }
    .slyx-log {
      margin: auto;
@@ -78,8 +78,8 @@ html {
    }
    .music-icon {
      position: absolute;
-     top: 1.7em;
-     right: 0.5rem;
+     top: 4em;
+     right: 1.8rem;
      width: 2.8rem;
      z-index: 99;
      &.start {
@@ -113,8 +113,8 @@ html {
        .back-icon {
          width: 4rem;
          position: absolute;
-         left: 0.2rem;
-         top: 1.7rem;
+         left: 0.9rem;
+         top: 4rem;
          z-index: 9;
        }
        .apply_page {

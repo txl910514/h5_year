@@ -62,7 +62,7 @@ var index = {
     });
     var $init_url = $('#init-url');
     var url = '<%=base%>' + $init_url.attr('url');
-    COMMON_FUNC.ajax_get($init_url,{ hosid:7}, url, 'init_callback', function(result) {
+    COMMON_FUNC.ajax_get($init_url,{ hosid:18}, url, 'init_callback', function(result) {
       if (result.success) {
         $('#hospitalName').text(result.data.hospitalName);
         var time_axis_tpl = self.time_axis_tpl(result.data);
@@ -136,6 +136,15 @@ var index = {
               case 4:
                 self.hide_chapter('technical-chapter');
                 break;
+              case 6:
+                self.hide_chapter('diary-chapter');
+                break;
+              case 7:
+                self.chapter_animate('diary-chapter');
+                break;
+              case 8:
+                self.hide_chapter('diary-chapter');
+                break;
               default :
                 break;
             }
@@ -199,6 +208,14 @@ var index = {
           top:'7rem',
           right:'3rem',
           width:'9rem',
+          opacity: 1
+        })
+      }
+      else if(class_name === 'diary-chapter') {
+        $chapter.css({
+          top:'4rem',
+          right:'1rem',
+          width:'6rem',
           opacity: 1
         })
       }
