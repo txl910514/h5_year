@@ -40,7 +40,7 @@ var gulp = require('gulp'),
 		js: 'manifest.js.json'
 	},
 	compress = false,
-	img = false,
+	img = true,
 	js = false,
 	version = new Date().getTime(),
 	api = require('./url.json'),
@@ -64,7 +64,7 @@ var gulp = require('gulp'),
 var condition = function (file) {
 	// TODO: add business logic
 	var file_path = file.history[0].replace(file.cwd+'/', '');
-	if(file_path === pathConfig.src + 'js/jslib/underscore.js') {
+	if(file_path === pathConfig.src + 'js/jslib/underscore-min.js') {
 		return false;
 	}
 	else if(file_path === pathConfig.src + 'js/gq/1.mp3') {
