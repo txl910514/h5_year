@@ -36,6 +36,28 @@ html {
        width: 100%;
        font-size: 1.8rem;
      }
+     &#progress-page {
+       display: block;
+       .progress-box {
+         width: 80%;
+         margin: auto;
+         font-size: 1.6rem;
+         .progress-back {
+           width: 100%;
+           height: $radius5;
+           margin-top: $radius5;
+           border-radius: $radius5;
+           background: $color3;
+           .progress-bar {
+             height: 100%;
+             margin-top: $radius5;
+             border-radius: $radius5;
+             background: $color1;
+             transition: width 2s;
+           }
+         }
+       }
+     }
    }
    img {
      max-width: 100%;
@@ -1219,6 +1241,30 @@ html {
         }
         .by-text {
           width: 28.5%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:365px) and (max-width:380px){
+  html{
+    body {
+      .swiper-container {
+        .swiper-slide, .apply_page {
+          .common-btn {
+            &.share-btn {
+              width: 24rem;
+            }
+          }
+          .reset-share-box {
+            .share-btn {
+              width: 14rem;
+              &.reset-btn {
+                width: 9rem;
+              }
+            }
+          }
         }
       }
     }

@@ -12,9 +12,30 @@ var index = {
   worker_line_tpl: _.template($('#worker_line_tpl').html()),
   ready_init:function() {
     var search_value = COMMON_FUNC.search_location('hospital_id');
+    var $progress_page =  $('#progress-page');
     if(!search_value) {
+      $progress_page.css('display','none');
       $('.parameter_error').css('display','block');
       return false;
+    }
+    else {
+      var progress = 20;
+      var add = 0;
+      $progress_page.css('display','block');
+      function progress_page() {
+        if (add > 80) {
+          clearTimeout(GVR.INTERVAL.progress);
+        }
+        else {
+          $progress_page.find('.text-right').text(add + '%');
+          $progress_page.find('.progress-bar').css({
+            width: add + '%'
+          });
+          GVR.INTERVAL.progress = setTimeout(progress_page, 2000);
+          add += progress;
+        }
+      }
+      progress_page();
     }
     var self = this;
     var screen_height = $(document).height();
@@ -69,6 +90,7 @@ var index = {
     COMMON_FUNC.ajax_get($init_url,{ hosid:search_value}, url, 'init_callback', function(result) {
       if (result.success) {
         $('#hospitalName').text(result.data.hospitalName);
+        document.title = result.data.hospitalName + '年度报告';
         var time_axis_tpl = self.time_axis_tpl(result.data);
         $('#time_tpl_html').html(time_axis_tpl);
         $('#numberEquipment').text(result.data.numberEquipment);
@@ -121,6 +143,16 @@ var index = {
           direction : 'vertical',
           onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
             swiperAnimateCache(swiper); //隐藏动画元素
+            var $progress_page =  $('#progress-page');
+            $progress_page.find('.text-right').text(100 + '%');
+            $progress_page.find('.progress-bar').css({
+              width: 100 + '%'
+            });
+            setTimeout(function() {
+              $progress_page.css({
+                display:'none'
+              });
+            }, 1000);
             swiperAnimate(swiper); //初始化完成开始动画
             switch (swiper.activeIndex) {
               case 0:
@@ -230,7 +262,7 @@ var index = {
       $('.min-radius-line2').css({
         width: '47%'
       });
-    },4000);
+    },2500);
   },
 
   hide_time: function() {

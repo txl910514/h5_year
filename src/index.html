@@ -24,6 +24,9 @@
   </script>
 </head>
 <body>
+  <div style="display: none">
+    <img src="images/logo.png" alt="">
+  </div>
   <div class="swiper-container" url="/ydh5/gethosinfo" id="init-url">
     <div class="swiper-wrapper">
       <div class="swiper-slide home_page">
@@ -44,13 +47,13 @@
           <div class="time-icon ani" swiper-animate-effect="slideInDown" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
             <img src="images/time-icon.png" alt="">
           </div>
-          <div class="radius_animate radius_1 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-          <div class="radius_animate radius_2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-          <div class="radius_animate radius_3 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-          <div class="radius_4 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-          <div class="min-radius-1 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="1s"></div>
-          <div class="min-radius-2 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="2s"></div>
-          <div class="min-radius-3 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s" swiper-animate-delay="3s"></div>
+          <div class="radius_animate radius_1 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></div>
+          <div class="radius_animate radius_2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></div>
+          <div class="radius_animate radius_3 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></div>
+          <div class="radius_4 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></div>
+          <div class="min-radius-1 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+          <div class="min-radius-2 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
+          <div class="min-radius-3 min-radius ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"></div>
           <div class="min-radius-line min-radius-line1" style="width: 0"></div>
           <div class="min-radius-line min-radius-line2" style="width: 0"></div>
           <div id="time_tpl_html">
@@ -184,7 +187,7 @@
       </div>
       <div class="swiper-slide device-diary">
         <div class="position-absolute">
-          <div class="title ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">设备科的日记</div>
+          <div class="title ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">设备科日记</div>
           <div id="device-diary-html">
 
           </div>
@@ -361,32 +364,46 @@
       </div>
     </div>
   </div>
+  <div class="parameter_error" id="progress-page" style="display: block">
+    <div class="table">
+      <div class="table-cell">
+        <div class="progress-box">
+          <div class="text-right">
+            0%
+          </div>
+          <div class="progress-back">
+            <div class="progress-bar" style="width:0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script type="text/html" id="time_axis_tpl">
     <div class="axle-content axle-content1">
-      <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="1.2s"><%- recordTime %></div>
-      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="1.4s">
+      <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- recordTime %></div>
+      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
         <span class="axle-bold" ><%- recordDepartment %></span>录入了第一台设备
       </div>
-      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="1.6s"><%- recordEquipment %></div>
+      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s"><%- recordEquipment %></div>
     </div>
     <div class="axle-content axle-content2">
-      <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="2.2s"><%- repairTime %></div>
-      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="2.4s">
+      <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- repairTime %></div>
+      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
         <span class="axle-bold"><%- repairDepartment %></span>报修了第一台设备
       </div>
-      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="2.6s" ><%- recordEquipment %></div>
+      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s" ><%- recordEquipment %></div>
     </div>
     <div class="axle-content axle-content3">
       <% if(screenTime) { %>
-        <div class="axle-time ani"  swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="3.2s"><%- screenTime %></div>
-        <div class="axle-name-owl ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="3.4s">累计实时监测设备</div>
-        <div class="axle-name-owl ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="3.6s">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
+        <div class="axle-time ani"  swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- screenTime %></div>
+        <div class="axle-name-owl ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">累计实时监测设备</div>
+        <div class="axle-name-owl ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
       <% } else { %>
-        <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.2s" swiper-animate-delay="3.2s"><%- completeTime %></div>
-        <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s" swiper-animate-delay="3.4s">
+        <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- completeTime %></div>
+        <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
           <span class="axle-bold"><%- completeDepartment %></span>维修完成第一台设备
         </div>
-        <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.3s" swiper-animate-delay="3.6s"><%- completeEquipment %></div>
+        <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s"><%- completeEquipment %></div>
       <% } %>
     </div>
   </script>
@@ -520,6 +537,7 @@
     <% }) %>
   </script>
   <script type="text/javascript" src="jslib/jquery.min.js"></script>
+  <script type="text/javascript" src="jslib/hammer.min.js"></script>
   <script type="text/javascript" src="jslib/swiper.min.js"></script>
   <script type="text/javascript" src="jslib/underscore-min.js"></script>
   <script type="text/javascript" src="jslib/swiper.animate1.0.2.min.js"></script>
