@@ -213,6 +213,16 @@ var index = {
     });
   },
 
+  get_time: function() {
+    var local_time = new Date();
+    var hour = local_time.getHours();
+    var min = local_time.getMinutes();
+    var year = local_time.getFullYear();
+    var month = local_time.getMonth()+1;
+    var date = local_time.getDate();
+    return  year + '/' + month + '/' + date  + ' ' + hour + ':' + min
+  },
+
   diary_animate: function() {
     var text = '设备科日记';
     var add_text = '';
@@ -395,7 +405,16 @@ var index = {
     });
   },
 
-  my_share: function() {
+  my_share: function($obj) {
+    var self = this;
+    var url = '<%=base%>' + $('body').attr('url');
+    var data = {};
+    var time = self.get_time();
+    data.status = 1;
+    data.date = time;
+    COMMON_FUNC.ajax_get($obj, data, url, 'stayreal', function(result) {
+      console.log(result);
+    });
     $('#prompt_back').css({
       display:'block',
       'opacity': 1
@@ -409,7 +428,16 @@ var index = {
     });
   },
 
-  apply_btn: function() {
+  apply_btn: function($obj) {
+    var self = this;
+    var url = '<%=base%>' + $('body').attr('url');
+    var data = {};
+    var time = self.get_time();
+    data.status = 2;
+    data.date = time;
+    COMMON_FUNC.ajax_get($obj, data, url, 'stayreal', function(result) {
+      console.log(result);
+    });
     $('#form-page').css('display', 'block');
   },
 
@@ -482,9 +510,9 @@ $(function(){
   index.apply_form($(this));
   return false;
 }).on('click', '.my-share', function() {
-  index.my_share();
+  index.my_share($(this));
 }).on('click', '#apply-btn', function() {
-  index.apply_btn();
+  index.apply_btn($(this));
 }).on('click', '.again_play', function() {
   index.again_play();
 })
