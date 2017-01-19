@@ -115,6 +115,7 @@ var index = {
         var device_line_tpl = self.device_line_tpl(result.data);
         $('#device-section').html(device_line_tpl);
         $('#saveTime').html(result.data.saveTime);
+        $('#saveWork').html(result.data.fixNumber);
         var diary_text_tpl = self.diary_text_tpl(result.data);
         $('#device-diary-html').html(diary_text_tpl);
         var worker_json = [
@@ -165,6 +166,7 @@ var index = {
           },
           onSlideChangeEnd: function(swiper){
             swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            console.log(swiper.activeIndex);
             switch (swiper.activeIndex) {
               case 0:
                 self.hide_home();
@@ -184,13 +186,19 @@ var index = {
                 break;
               case 4:
                 self.hide_chapter('technical-chapter');
+                self.hide_diary_animate();
+                break;
+              case 5:
+                self.hide_diary_animate();
                 break;
               case 6:
                 self.hide_chapter('diary-chapter');
+                self.diary_animate('diary-chapter');
                 break;
               case 7:
                 self.chapter_animate('diary-chapter');
                 self.hide_share();
+                self.hide_diary_animate();
                 break;
               case 8:
                 self.hide_chapter('diary-chapter');
@@ -203,6 +211,25 @@ var index = {
         });
       }
     });
+  },
+
+  diary_animate: function() {
+    var text = '设备科日记';
+    var add_text = '';
+    _.each(text, function(value, index) {
+      setTimeout(function() {
+        add_text += value;
+        $('.device-diary-text').text(add_text);
+        if(index === text.length -1) {
+          $('.device-diary-db').css('display', 'none');
+        }
+      }, 500*(index+1));
+    });
+  },
+
+  hide_diary_animate: function() {
+    $('.device-diary-text').text('');
+    $('.device-diary-db').css('display', 'inline-block');
   },
 
   home_animate: function() {
@@ -321,12 +348,23 @@ var index = {
           opacity: 1
         })
       }
-
-    }, 2800)
+    }, 2800);
+    if(class_name === 'diary-chapter') {
+      setTimeout(function() {
+        $('.work-dg').css({
+          height:'100%',
+          opacity: 1
+        })
+      }, 500);
+    }
   },
 
   hide_chapter: function(class_name) {
     var $chapter = $('.'+ class_name);
+    $('.work-dg').css({
+      height:'0%',
+      opacity: 0
+    });
     $chapter.css({
       top:'100%',
       right:'100%',

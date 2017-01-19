@@ -31,7 +31,9 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide home_page">
         <div class="position-absolute">
-          <div class="home-time ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">2016</div>
+          <div class="home-time ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+            <img src="images/year_icon.png" alt="">
+          </div>
           <div class="home-report ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s">年度报告</div>
           <div class="home-name ani" id="hospitalName" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"></div>
           <div class="home-theme ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2.5s">[ 设备篇 ]</div>
@@ -69,7 +71,7 @@
         <div class="position-absolute">
           <div class="standing-content">
             <div class="standing-content">
-              <div class="standing-value ani" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+              <div class="standing-value ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="0s">
                 您通过医信云服完成了<span class="standing-bold" id="numberEquipment"></span>台设备盘点,估值达
                 <span class="standing-bold" id="valueEquipment"></span>
               </div>
@@ -88,12 +90,12 @@
                   })
                 </div>
                 <div class="standing-exact ani" swiper-animate-effect="rotateInUpRight" swiper-animate-duration="0.3s" swiper-animate-delay="1s">
-                  <span class="exact-text">台帐</span> 准确率
+                  <span class="exact-text">云服</span> 准确率
                 </div>
               </div>
-              <div class="standing-value standing-value2 ani" swiper-animate-effect="rotateInUpRight" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
-                其中<span class="standing-bold">Ⅱ、Ⅲ类医疗器械</span>云台帐准确率提升至<span class="standing-bold">100%</span>,
-                高于行业平均水平。
+              <div class="standing-value standing-value2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="0s">
+                其中<span class="standing-bold">Ⅱ、Ⅲ类医疗器械</span>云服准确率提升至<span class="standing-bold">100%</span>,
+                高于行业平均水平
               </div>
               <div class="standing-detail-img ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="1.5s">
                 <img src="images/standing-detail-img.png" alt="">
@@ -122,7 +124,7 @@
             <div class="technical-num technical-num3 ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.2s" swiper-animate-delay="1.4s">3</div>
             <div id="technical_tpl_html"></div>
           </div>
-          <div class="technical-chapter chapter-icon">
+          <div class="technical-chapter chapter-icon" >
             <img src="images/technical-chapter.png" alt="">
           </div>
           <div class="by-bottom">
@@ -172,7 +174,7 @@
           <div class="device-summing ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="2.6s">
             <div class="summing-head margin-top"></div>
             <div class="summing-content">
-              <div class="save-line ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.9s">2016年为<span class="save-time" ><span id="saveWork"></span>位</span>医工</div>
+              <div class="save-line save-work ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.9s">2016年为<span class="save-time" ><span id="saveWork"></span>位</span>医工</div>
               <div class="save-line ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.9s">累计节约<span class="save-time" ><span id="saveTime"></span>个</span>维修小时</div>
               <div class="save-border ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.2s" swiper-animate-delay="3.1s"></div>
               <div class="device-status ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.2s" swiper-animate-delay="3.3s">设备正常运转</div>
@@ -188,7 +190,12 @@
       </div>
       <div class="swiper-slide device-diary">
         <div class="position-absolute">
-          <div class="title ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s">设备科日记</div>
+          <div class="title ani">
+            <span class="display-middle device-diary-text"></span>
+            <span class="display-middle device-diary-db">
+              <img src="images/gb.gif" alt="">
+            </span>
+          </div>
           <div id="device-diary-html">
 
           </div>
@@ -223,9 +230,9 @@
             <div class="alert-bottom-right ani" swiper-animate-effect="shake" swiper-animate-duration="0.3s" swiper-animate-delay="0.7s"></div>
             <img src="images/ewm.png" alt="" class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
           </div>
-          <div class="help-text qrcode-text ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="1s">*长按二维码，关注医信云服</div>
+          <div class="help-text qrcode-text ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="1s">*长按二维码，关注数联医信</div>
           <div class="thanks-text ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
-            目前数联医信已覆盖<span class="">21</span>个省份，
+            目前数联医信已覆盖<span class="">21</span>个省市，
           </div>
           <div class="thanks-text ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
             服务<span class="">三百</span>余家客户。
@@ -270,9 +277,9 @@
             <div class="alert-bottom-right"></div>
             <img src="images/ewm.png" alt="">
           </div>
-          <div class="help-text qrcode-text success-qrcode-text">*长按二维码，关注医信云服</div>
+          <div class="help-text qrcode-text success-qrcode-text">*长按二维码，关注数联医信</div>
           <div class="thanks-text">
-            目前数联医信已覆盖<span class="">21</span>个省份，
+            目前数联医信已覆盖<span class="">21</span>个省市，
           </div>
           <div class="thanks-text">
             服务<span class="">三百</span>余家客户。
@@ -330,7 +337,7 @@
             <input type="text" name="hospital" placeholder="医院名称" id="hospital-name" class="apply-input clearable">
           </div>
           <div class="input-line">
-            <input name="jop" type="text" placeholder="职务" id="job" class="apply-input clearable">
+            <input name="job" type="text" placeholder="职务" id="job" class="apply-input clearable">
           </div>
           <div class="input-line">
             <input name="phone" type="text" placeholder="电话" id="phone" class="apply-input clearable">
@@ -382,29 +389,29 @@
   <script type="text/html" id="time_axis_tpl">
     <div class="axle-content axle-content1">
       <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- recordTime %></div>
-      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
-        <span class="axle-bold" ><%- recordDepartment %></span>录入了第一台设备
+      <div class="axle-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+        在<span class="axle-bold" ><%- recordDepartment %></span>录入第一台设备
       </div>
-      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s"><%- recordEquipment %></div>
+      <div class="axle-name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s"><%- recordEquipment %></div>
     </div>
     <div class="axle-content axle-content2">
       <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- repairTime %></div>
-      <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
-        <span class="axle-bold"><%- repairDepartment %></span>报修了第一台设备
+      <div class="axle-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+        在<span class="axle-bold"><%- repairDepartment %></span>报修第一台设备
       </div>
-      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s" ><%- recordEquipment %></div>
+      <div class="axle-name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s" ><%- recordEquipment %></div>
     </div>
     <div class="axle-content axle-content3">
       <% if(screenTime) { %>
         <div class="axle-time ani"  swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- screenTime %></div>
-        <div class="axle-name-owl ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">累计实时监测设备</div>
-        <div class="axle-name-owl ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
+        <div class="axle-name-owl axle-name-block ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">医院安装数字大屏</div>
+        <div class="axle-name-owl ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">累计实时监测设备状态<span class="owl-bold"><%- screenRange %></span>小时</div>
       <% } else { %>
         <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- completeTime %></div>
-        <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
-          <span class="axle-bold"><%- completeDepartment %></span>维修完成第一台设备
+        <div class="axle-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+          在<span class="axle-bold"><%- completeDepartment %></span>维修完成第一台设备
         </div>
-        <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s"><%- completeEquipment %></div>
+        <div class="axle-name ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s"><%- completeEquipment %></div>
       <% } %>
     </div>
   </script>
@@ -448,7 +455,7 @@
     <% } else { %>
     <div class="realize-text ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.3s" swiper-animate-delay="2.8s">立刻与MEMS申请数字大屏</div>
     <div class="manage-text no-manage-text ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.2s" swiper-animate-delay="3s">
-      即可实现<span class="font-manage ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.2s" swiper-animate-delay="3.2s">“三位一体”</span>设备全息立体管理。
+      即可实现<span class="font-manage ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.2s" swiper-animate-delay="3.2s">“三位一体”</span>设备全息立体管理
     </div>
     <% } %>
 
@@ -524,8 +531,9 @@
     <% _.each(worker_json, function(val, index){ %>
       <div class="worker-line <% if(index % 2 === 1){ %>odd-line<% } %>">
         <div class="ani worker-img display-middle worker-img<%- val.prize_index %>" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s"></div>
+        <div class="work-dg"></div>
         <div class="worker-con">
-          <div class="worker-title ani " swiper-animate-effect="<% if(index % 2 === 1){ %>bounceInLeft<% }else{ %>bounceInRight<% } %>" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+          <div class="worker-title ani" swiper-animate-effect="<% if(index % 2 === 1){ %>bounceInLeft<% }else{ %>bounceInRight<% } %>" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
             <span class="arrow">
               <img src="images/worker_arrow.png" alt="">
             </span>

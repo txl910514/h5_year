@@ -363,8 +363,10 @@ html {
            margin: auto;
            .standing-value {
              margin-top: 5rem;
-             font-size: 1.5rem;
+             font-size: 1.4rem;
              line-height: 2rem;
+             margin-bottom: 1rem;
+             text-align: center;
              &.standing-value2{
                margin-top: 1.2rem;
              }
@@ -516,8 +518,10 @@ html {
              background-size: contain;
              &.margin-top {
                margin-top: 1rem;
+               margin-bottom: -$width1;
              }
              &.summing-rotate {
+               margin-top: -0.1rem;
                transform: rotate(180deg);
                transform-origin: 50% 49.9%;
              }
@@ -533,6 +537,9 @@ html {
              color: $color6;
              text-align: center;
              .save-line {
+               &.save-work {
+                 margin-bottom: 0.3rem;
+               }
                .save-time {
                  font-size: 1.5rem;
                  color: $color1;
@@ -794,10 +801,12 @@ html {
            }
            .axle-name-owl {
              color: $color1;
-             font-size: 1.4rem;
-             font-weight: bold;
+             font-size: 1.2rem;
+             &.axle-name-block {
+               color: $color3;
+             }
              .owl-bold {
-               font-size: 1.8rem;
+               font-size: 1.6rem;
                color: $color7;
              }
            }
@@ -923,6 +932,9 @@ html {
            font-size: 3rem;
            text-align: center;
            margin-bottom: 2rem;
+           .device-diary-db {
+             margin-left: -0.4rem;
+           }
          }
          .left-content {
            text-align: left;
@@ -974,6 +986,9 @@ html {
            font-size: 8rem;
            text-align: right;
            margin-right: 2rem;
+           img {
+             width: 60%;
+           }
          }
          .home-report {
            font-size: 3.9rem;
@@ -1061,6 +1076,18 @@ html {
                  background-image: url('../images/worker5.png');
                }
              }
+             .work-dg {
+               width: 55%;
+               height: 100%;
+               background-size: cover;
+               background-position: 0% center;
+               background-repeat: no-repeat;
+               background-image: url('../images/work_dg.png');
+               position: absolute;
+               top: 0;
+               left: 0;
+               transition: height 1s, opacity 1s;
+             }
              .worker-con {
                 position: absolute;
                 top:25%;
@@ -1087,11 +1114,16 @@ html {
                  font-size: 1.3rem;
                  color: $color3;
                  margin-bottom: 0.5rem;
-                 padding-right: 1.5rem;
+                 padding-right: 0.5rem;
                }
              }
              &.odd-line {
-                text-align: right;
+               text-align: right;
+               .work-dg {
+                 top: 0;
+                 right: 0;
+                 left: inherit;
+               }
                .worker-img {
                  transform:scaleX(-1);
                }
@@ -1108,7 +1140,7 @@ html {
                    }
                  }
                  .worker-describe {
-                   padding-left: 1.5rem;
+                   padding-left: 0.5rem;
                    padding-right: 0;
                  }
                }
