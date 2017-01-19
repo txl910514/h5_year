@@ -14,8 +14,8 @@ var index = {
     var search_value = COMMON_FUNC.search_location('hospital_id');
     var $progress_page =  $('#progress-page');
     if(!search_value) {
-      $progress_page.css('display','none');
       $('.parameter_error').css('display','block');
+      $progress_page.css('display','none');
       return false;
     }
     else {
@@ -153,6 +153,7 @@ var index = {
                 display:'none'
               });
             }, 1000);
+            self.music_icon($('.music-icon'), 'load');
             swiperAnimate(swiper); //初始化完成开始动画
             switch (swiper.activeIndex) {
               case 0:
@@ -381,12 +382,31 @@ var index = {
     $form.form_clear();
   },
 
-  music_icon: function($obj) {
+  music_icon: function($obj, load) {
     $obj.toggleClass('start');
     var $audio = $('#audio').get(0);
-    if($audio.paused){
+    if(load) {
       $audio.play();
-      $obj.find('img').attr('src', 'images/start_music.png');
+      $('body').one('touchstart', function() {
+        $audio.play();
+        if($audio.paused) {
+          $obj.find('img').attr('src', 'images/no_music.png');
+        }
+        else {
+          $obj.addClass('start');
+          $obj.find('img').attr('src', 'images/start_music.png');
+        }
+      });
+    }
+    if($obj.hasClass('start')){
+      $audio.play();
+      if($audio.paused) {
+        $obj.removeClass('start');
+        $obj.find('img').attr('src', 'images/no_music.png');
+      }
+      else {
+        $obj.find('img').attr('src', 'images/start_music.png');
+      }
     }else{
       $audio.pause();
       $obj.find('img').attr('src', 'images/no_music.png');
@@ -406,6 +426,18 @@ var index = {
 
 $(function(){
   index.ready_init();
+  var prompt_back = new Hammer(document.getElementById("prompt_back"));
+  prompt_back.on('tap',function(){
+    index.prompt_back();
+  });
+  var back_icon = new Hammer(document.getElementById("back-icon"));
+  back_icon.on('tap',function(){
+    index.back_icon();
+  });
+  var music_icon = new Hammer(document.getElementById("music-icon"));
+  music_icon.on('tap',function(){
+    index.music_icon($('#music-icon'));
+  });
 }).on('click', '.input-line input', function(e) {
   index.input_focus($(this));
 }).on('submit', '#apply_form', function() {
@@ -413,14 +445,8 @@ $(function(){
   return false;
 }).on('click', '.my-share', function() {
   index.my_share();
-}).on('click', '#prompt_back', function() {
-  index.prompt_back();
 }).on('click', '#apply-btn', function() {
   index.apply_btn();
-}).on('click', '#back-icon', function() {
-  index.back_icon();
-}).on('click', '.music-icon', function() {
-  index.music_icon($(this));
 }).on('click', '.again_play', function() {
   index.again_play();
 })

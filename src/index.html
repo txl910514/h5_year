@@ -172,7 +172,8 @@
           <div class="device-summing ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="2.6s">
             <div class="summing-head margin-top"></div>
             <div class="summing-content">
-              <div class="save-line ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.9s">2016年累计节约<span class="save-time" ><span id="saveTime"></span>小时</span>维修时间</div>
+              <div class="save-line ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.9s">2016年为<span class="save-time" ><span id="saveWork"></span>位</span>医工</div>
+              <div class="save-line ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="2.9s">累计节约<span class="save-time" ><span id="saveTime"></span>个</span>维修小时</div>
               <div class="save-border ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.2s" swiper-animate-delay="3.1s"></div>
               <div class="device-status ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.2s" swiper-animate-delay="3.3s">设备正常运转</div>
               <div class="status-text ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.2s" swiper-animate-delay="3.5s">为保证患者生命质量提供最及时支持</div>
@@ -224,7 +225,7 @@
           </div>
           <div class="help-text qrcode-text ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="1s">*长按二维码，关注医信云服</div>
           <div class="thanks-text ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
-            目前数联医信已覆盖<span class="">19</span>个省份，
+            目前数联医信已覆盖<span class="">21</span>个省份，
           </div>
           <div class="thanks-text ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
             服务<span class="">三百</span>余家客户。
@@ -271,7 +272,7 @@
           </div>
           <div class="help-text qrcode-text success-qrcode-text">*长按二维码，关注医信云服</div>
           <div class="thanks-text">
-            目前数联医信已覆盖<span class="">19</span>个省份，
+            目前数联医信已覆盖<span class="">21</span>个省份，
           </div>
           <div class="thanks-text">
             服务<span class="">三百</span>余家客户。
@@ -347,12 +348,12 @@
     </div>
   </div>
   <div>
-    <audio src="gq/1.mp3" autoplay loop id="audio">
+    <audio src="gq/1.mp3"  loop id="audio" preload="auto">
       您的浏览器不支持 audio 标签。
     </audio>
   </div>
-  <div class="music-icon start">
-    <img src="images/start_music.png" alt="">
+  <div class="music-icon " id="music-icon">
+    <img src="images/no_music.png" alt="">
   </div>
   <div class="bottom-arrow">
     <img src="images/bottom_arrow.png" alt="">
@@ -391,19 +392,19 @@
       <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
         <span class="axle-bold"><%- repairDepartment %></span>报修了第一台设备
       </div>
-      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s" ><%- recordEquipment %></div>
+      <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s" ><%- recordEquipment %></div>
     </div>
     <div class="axle-content axle-content3">
       <% if(screenTime) { %>
         <div class="axle-time ani"  swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- screenTime %></div>
         <div class="axle-name-owl ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">累计实时监测设备</div>
-        <div class="axle-name-owl ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
+        <div class="axle-name-owl ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s">状态<span class="owl-bold"><%- screenRange %></span>小时</div>
       <% } else { %>
         <div class="axle-time ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s"><%- completeTime %></div>
         <div class="axle-title ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
           <span class="axle-bold"><%- completeDepartment %></span>维修完成第一台设备
         </div>
-        <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s"><%- completeEquipment %></div>
+        <div class="axle-name ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2s"><%- completeEquipment %></div>
       <% } %>
     </div>
   </script>
