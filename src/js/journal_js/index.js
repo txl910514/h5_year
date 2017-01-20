@@ -123,19 +123,19 @@ var index = {
             prize: result.data.prize1,
             fix: result.data.fix1,
             description: result.data.description1,
-            prize_index:1
+            prize_index:result.data.prizeIndex1
           },
           {
             prize: result.data.prize2,
             fix: result.data.fix2,
             description: result.data.description2,
-            prize_index:3
+            prize_index:result.data.prizeIndex2
           },
           {
             prize: result.data.prize3,
             fix: result.data.fix3,
             description: result.data.description3,
-            prize_index:5
+            prize_index:result.data.prizeIndex3
           }
         ];
         var worker_line_tpl = self.worker_line_tpl({worker_json: worker_json});
