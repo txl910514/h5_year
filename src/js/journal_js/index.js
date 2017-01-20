@@ -255,7 +255,6 @@ var index = {
   share_animate: function() {
     var num = 1;
     $('.bottom-arrow').css('display','none');
-    $('#my-share').attr('swiper-animate-effect', 'zoomIn');
     if (GVR.INTERVAL.share_animate) {
       clearInterval(GVR.INTERVAL.share_animate);
     }
@@ -275,7 +274,6 @@ var index = {
       clearInterval(GVR.INTERVAL.share_animate);
     }
     $('#my-share').removeClass('zoomIn');
-    $('#my-share').attr('swiper-animate-effect', 'bounceInRight');
     $('.my-share').removeClass('share-ani');
   },
 
