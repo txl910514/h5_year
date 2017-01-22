@@ -85,6 +85,16 @@ var index = {
         height: height + 'px'
       });
     });
+    var stayreal_url = '<%=base%>' + $('body').attr('url');
+    var data = {};
+    var time = self.get_time();
+    var hos_id = COMMON_FUNC.search_location('hospital_id');
+    data.status = 3;
+    data.date = time;
+    data.hos_id = hos_id;
+    data.open_id = '';
+    COMMON_FUNC.ajax_get($('body'), data, stayreal_url, 'stayreal', function(result) {
+    });
     var $init_url = $('#init-url');
     var url = '<%=base%>' + $init_url.attr('url');
     COMMON_FUNC.ajax_get($init_url,{ hosid:search_value}, url, 'init_callback', function(result) {
@@ -166,7 +176,6 @@ var index = {
           },
           onSlideChangeEnd: function(swiper){
             swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-            console.log(swiper.activeIndex);
             switch (swiper.activeIndex) {
               case 0:
                 self.hide_home();
@@ -394,7 +403,10 @@ var index = {
 
   apply_form: function($form) {
     var self = this;
+    var time = self.get_time();
+    var hos_id = COMMON_FUNC.search_location('hospital_id');
     var data = $form.serialize();
+    data = data + '&cre_at=' + time + '&hos_id=' + hos_id;
     var url = '<%=base%>' + $form.attr('url');
     COMMON_FUNC.ajax_get($form, data, url, 'form_callback', function(result){
       if(result.success) {
@@ -412,8 +424,9 @@ var index = {
     var time = self.get_time();
     data.status = 1;
     data.date = time;
+    data.hos_id = hos_id;
+    data.open_id = '';
     COMMON_FUNC.ajax_get($obj, data, url, 'stayreal', function(result) {
-      console.log(result);
     });
     $('#prompt_back').css({
       display:'block',
@@ -433,10 +446,12 @@ var index = {
     var url = '<%=base%>' + $('body').attr('url');
     var data = {};
     var time = self.get_time();
+    var hos_id = COMMON_FUNC.search_location('hospital_id');
     data.status = 2;
     data.date = time;
+    data.hos_id = hos_id;
+    data.open_id = '';
     COMMON_FUNC.ajax_get($obj, data, url, 'stayreal', function(result) {
-      console.log(result);
     });
     $('#form-page').css('display', 'block');
   },

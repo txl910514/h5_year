@@ -71,6 +71,11 @@ var COMMON_FUNC = {
       'margin-left': -$alert_info.width() / 2 + 'px'
     });
     setTimeout(function() {
+      $alert_info.css({
+        'margin-left': -$alert_info.width() / 2 + 'px'
+      });
+    }, 650);
+    setTimeout(function() {
       $alert_info.remove();
     },2000);
   },

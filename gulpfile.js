@@ -40,7 +40,7 @@ var gulp = require('gulp'),
 		js: 'manifest.js.json'
 	},
 	compress = false,
-	img = true,
+	img = false,
 	js = false,
 	version = new Date().getTime(),
 	api = require('./url.json'),
