@@ -422,6 +422,7 @@ var index = {
     var url = '<%=base%>' + $('body').attr('url');
     var data = {};
     var time = self.get_time();
+    var hos_id = COMMON_FUNC.search_location('hospital_id');
     data.status = 1;
     data.date = time;
     data.hos_id = hos_id;
